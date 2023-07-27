@@ -8,13 +8,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Capstone Project</title>
+        <title>Kid's Log</title>
         <meta name="description" content="Penguin Capstone Project" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={inter.className}>
-        <Heading>🐧Penguin Capstone Template🐧</Heading>
+        <Heading>Welcome to Kid's Log</Heading>
       </main>
     </>
   );
