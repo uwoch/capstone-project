@@ -1,0 +1,30 @@
+[
+    {
+      "_id": 1,
+      "name": "Pixie Fizz",
+      "dob": "01.02.2012",
+      "tooth": "22.07.2012",
+      "illness": "cough"
+    },
+    {
+      "_id": 2,
+      "name": "Jinx Bumblebee",
+      "dob": "10.04.2014",
+      "tooth": "22.09.2014",
+      "illness": "sniffles"
+    },
+    {
+      "_id": 3,
+      "name": "Zippy Snickerdoodle",
+      "dob": "20.06.2016",
+      "tooth": "22.11.2016",
+      "illness": "flu"
+    },
+    {
+      "_id": 4,
+      "name": "Boo",
+      "dob": "30.08.2018",
+      "tooth": "22.01.2019",
+      "illness": "middle ear infection"
+    }
+  ]
