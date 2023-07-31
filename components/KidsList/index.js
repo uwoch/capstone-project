@@ -18,7 +18,6 @@ export default function KidsList() {
       <StyledList>
         {data.map((kid) => (
           <li key={kid._id}>
-            <StyledLink href={`/${kid._id}`}>{kid.name}</StyledLink>
           </li>
         ))}
       </StyledList>
