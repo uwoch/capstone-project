@@ -3,8 +3,8 @@ const { Schema } = mongoose;
 
 const kidSchema = new Schema({
   name: { type: String, required: true },
-  dob: { type: Number, required: true },
-  tooth: { type: Number, required: true },
+  dob: { type: String, required: true },
+  tooth: { type: String, required: true },
   illness: { type: String, required: true },
 });
 

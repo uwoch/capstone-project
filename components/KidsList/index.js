@@ -1,5 +1,6 @@
 import useSWR from "swr";
-import { StyledHeading, StyledList } from "./KidsList.styled";
+import { StyledHeading, StyledList, StyledListContainer,
+    StyledListItem } from "./KidsList.styled";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -17,13 +18,15 @@ export default function KidsList() {
   return (
     <>
       <StyledHeading>All Kids</StyledHeading>
+      <StyledListContainer>
       <StyledList>
         {data.map((kid) => (
-          <li key={kid._id}>
-          {kid.name}
-          </li>
+          <StyledListItem key={kid._id}>
+          {kid.name} <br /> {kid.dob}
+          </StyledListItem>
         ))}
       </StyledList>
+      </StyledListContainer>
     </>
   );
 }
