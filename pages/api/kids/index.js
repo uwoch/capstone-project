@@ -6,6 +6,6 @@ export default async function handler(request, response) {
 
   if (request.method === "GET") {
     const kids = await Kid.find();
-    response.status(200).json(nurses);
+    response.status(200).json(kids);
   }
 }
