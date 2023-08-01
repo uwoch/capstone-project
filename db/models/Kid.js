@@ -6,7 +6,6 @@ const kidSchema = new Schema({
   dob: { type: String, required: true },
   tooth: { type: String, required: true },
   illness: { type: String, required: true },
-  cloudinaryPublicId: { type: String, required: true }, 
   image: { type: String, required: true },
 });
 

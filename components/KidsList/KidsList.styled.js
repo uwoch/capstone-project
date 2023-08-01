@@ -19,8 +19,6 @@ export const StyledList = styled.ul`
   padding: 0px;
 `;
 export const StyledListItem = styled.li`
- ${'' /*  width: 80px;
-  height: 80px; */}
   flex-shrink: 0;
   margin: 10px;
   text-align: center;
