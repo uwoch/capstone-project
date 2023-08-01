@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image.js";
 
 export const StyledHeading = styled.h2`
   text-align: center;
@@ -13,19 +14,24 @@ export const StyledListContainer = styled.div`
 export const StyledList = styled.ul`
   list-style-type: none;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   justify-items: center;
-  padding: 0;
+  padding: 0px;
 `;
 export const StyledListItem = styled.li`
-  width: 400px;
-  height: 80px;
+ ${'' /*  width: 80px;
+  height: 80px; */}
   flex-shrink: 0;
-  padding: 20px;
-  margin-bottom: 10px;
+  margin: 10px;
   text-align: center;
 `;
+
 export const StyledImage = styled(Image)`
-   width: 80px;
-   height: 80px;
+   width: 200px;
+   height: 200px;
 `;
+
+export const StyledParagraph = styled.p`
+  text-align: center;
+  color: black;
+  `;

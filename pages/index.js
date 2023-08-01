@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styled from "styled-components";
 import { Inter } from "next/font/google";
-import KidsList from "@/components/KidsList";
+import KidsList from "@/components/KidsList/KidsList";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={inter.className}>
-        <Heading>Welcome to Kids Log</Heading>
+        <Heading>Willkommen bei Kids Log</Heading>
         <KidsList />
       </main>
     </>
