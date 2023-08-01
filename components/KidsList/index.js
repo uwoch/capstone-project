@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import { StyledHeading, StyledList, StyledListContainer,
-    StyledListItem } from "./KidsList.styled";
+    StyledListItem, StyledImage } from "./KidsList.styled";
+
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -10,7 +11,6 @@ export default function KidsList() {
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
-
   if (!data) {
     return <h1>Where are the kids???</h1>;
   }
@@ -19,10 +19,19 @@ export default function KidsList() {
     <>
       <StyledHeading>All Kids</StyledHeading>
       <StyledListContainer>
+      <ImageContainer>
+          <StyledImage
+            src={image}
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+            alt=""
+          />
+        </ImageContainer>
       <StyledList>
         {data.map((kid) => (
           <StyledListItem key={kid._id}>
-          {kid.name} <br /> {kid.dob}
+          {kid.image} <br /> {kid.name} <br /> {kid.dob}
           </StyledListItem>
         ))}
       </StyledList>

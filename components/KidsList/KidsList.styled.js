@@ -25,3 +25,7 @@ export const StyledListItem = styled.li`
   margin-bottom: 10px;
   text-align: center;
 `;
+export const StyledImage = styled(Image)`
+   width: 80px;
+   height: 80px;
+`;
