@@ -1,5 +1,5 @@
-import dbConnect from "../../../db/connect";
-import Kid from "../../../db/models/Kid";
+import dbConnect from "@/db/connect";
+import Kid from "@/db/models/Kid";
 
 export default async function handler(request, response) {
   await dbConnect();

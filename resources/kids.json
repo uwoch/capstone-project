@@ -1,26 +1,26 @@
 [
     {
       "name": "Pixie Fizz",
-      "dob": "01.02.2012",
-      "tooth": "22.07.2012",
-      "illness": "cough"
+      "birthDate": 2012-02-01,
+      "firstToothDate": 2012-07-22,
+      "firstIllness": "cough"
     },
     {
       "name": "Jinx Bumblebee",
-      "dob": "10.04.2014",
-      "tooth": "22.09.2014",
-      "illness": "sniffles"
+      "birthDate": "10.04.2014",
+      "firstToothDate": "22.09.2014",
+      "firstIllnesss": "sniffles"
     },
     {
       "name": "Zippy Snickerdoodle",
-      "dob": "20.06.2016",
-      "tooth": "22.11.2016",
-      "illness": "flu"
+      "birthDate": "20.06.2016",
+      "firstToothDate": "22.11.2016",
+      "firstIllness": "flu"
     },
     {
       "name": "Boo",
-      "dob": "30.08.2018",
-      "tooth": "22.01.2019",
-      "illness": "middle ear infection"
+      "birthDate": "30.08.2018",
+      "firstToothDate": "22.01.2019",
+      "firstIllness": "middle ear infection"
     }
   ]

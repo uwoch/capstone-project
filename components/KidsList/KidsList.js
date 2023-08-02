@@ -2,10 +2,10 @@ import useSWR from "swr";
 import { StyledHeading, StyledList, StyledListContainer,
     StyledListItem, StyledImage, StyledParagraph } from "./KidsList.styled";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+/* const fetcher = (url) => fetch(url).then((res) => res.json()); */
 
 export default function KidsList() {
-  const { data, isLoading } = useSWR("/api/kids", fetcher);
+  const { data, isLoading } = useSWR("/api/kids");
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -22,7 +22,8 @@ export default function KidsList() {
       <StyledList>
         {data.map((kid) => (
           <StyledListItem key={kid._id}>
-          <StyledImage src={kid.image} alt={kid.name} width={500} height={500} /> <br /> {kid.name} <br /> {kid.dob}
+          <StyledImage src={kid.image} alt={kid.name} width={500} height={500} /> 
+          <p>{kid.name}</p>
           </StyledListItem>
         ))}
       </StyledList>
