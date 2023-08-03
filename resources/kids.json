@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Pixie Fizz",
+      "birthDate": 2012-02-01,
+      "firstToothDate": 2012-07-22,
+      "firstIllness": "cough"
+    },
+    {
+      "name": "Jinx Bumblebee",
+      "birthDate": "10.04.2014",
+      "firstToothDate": "22.09.2014",
+      "firstIllnesss": "sniffles"
+    },
+    {
+      "name": "Zippy Snickerdoodle",
+      "birthDate": "20.06.2016",
+      "firstToothDate": "22.11.2016",
+      "firstIllness": "flu"
+    },
+    {
+      "name": "Boo",
+      "birthDate": "30.08.2018",
+      "firstToothDate": "22.01.2019",
+      "firstIllness": "middle ear infection"
+    }
+  ]
