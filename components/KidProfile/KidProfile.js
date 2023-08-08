@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { StyledKidProfile,  StyledGoBackLink } from "./KidProfile.styled";
+import { StyledKidProfile, StyledGoBackLink } from "./KidProfile.styled";
 
 export default function KidProfile({
   kidData
