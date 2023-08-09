@@ -6,7 +6,6 @@ export default function KidProfile({
   onGoBack
 }) {
 
-
   return (
     <>
       <StyledKidProfile>

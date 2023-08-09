@@ -14,14 +14,14 @@ export default function KidDetails() {
   if (!data) {
     return <div>Where are the kids???</div>;
   }
-
+  
   function handleGoBack() {
     router.back();
   }
   return (
     <KidProfile
-    onGoBack={handleGoBack}
       kidData={data}
+      onGoBack={handleGoBack}
     />
   );
 }
