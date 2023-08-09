@@ -34,12 +34,12 @@ export const StyledImage = styled(Image)`
 export const StyledParagraph = styled.p`
   text-align: center;
   color: black;
-  font-size: 18px;
+  font-size: 1rem;
   `;
 
 export const StyledLink = styled(Link)`
-color: black;
-text-decoration: none;
+  color: black;
+  text-decoration: none;
   &:hover {
     background-color: #6ffffa;
     border-radius: 10px;

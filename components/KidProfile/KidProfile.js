@@ -7,7 +7,6 @@ export default function KidProfile({
 }) {
 
   return (
-    <>
       <StyledKidProfile>
         <Image
           width={200}
@@ -21,6 +20,5 @@ export default function KidProfile({
         <p>Erster Zahn: {kidData.firstToothDate}</p>
       <StyledGoBackButton onClick={onGoBack}>Zurück</StyledGoBackButton>
       </StyledKidProfile>
-    </>
   );
 }
