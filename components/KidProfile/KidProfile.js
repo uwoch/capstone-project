@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { StyledKidProfile, StyledGoBackLink } from "./KidProfile.styled";
+import { StyledKidProfile, StyledGoBackButton } from "./KidProfile.styled";
 
 export default function KidProfile({
   kidData,
@@ -19,7 +19,7 @@ export default function KidProfile({
         <h3>* {kidData.birthDate}</h3>
         <p>Erste Krankheit: {kidData.firstIllness}</p>
         <p>Erster Zahn: {kidData.firstToothDate}</p>
-      <StyledGoBackLink onClick={onGoBack}>Zurück</StyledGoBackLink>
+      <StyledGoBackButton onClick={onGoBack}>Zurück</StyledGoBackButton>
       </StyledKidProfile>
     </>
   );

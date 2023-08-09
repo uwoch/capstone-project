@@ -14,7 +14,7 @@ export const StyledKidProfile = styled.div`
   }
 `;
 
-export const StyledGoBackLink = styled.button`
+export const StyledGoBackButton = styled.button`
   background-color: #f0f0f0;
   font-size: 16px;
   color: #333;

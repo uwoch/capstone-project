@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image.js";
+import Link from "next/link.js";
 
 export const StyledHeading = styled.h3`
   text-align: center;
@@ -17,9 +18,9 @@ export const StyledList = styled.ul`
   justify-items: center;
   padding: 0px;
   align-items: center;
+
 `;
 export const StyledListItem = styled.li`
-  flex-shrink: 0;
   margin: 0px;
   text-align: center;
   align-items: center;
@@ -27,19 +28,20 @@ export const StyledListItem = styled.li`
 export const StyledImage = styled(Image)`
    width: 200px;
    height: 200px;
+   border-radius: 10px;
+
 `;
 export const StyledParagraph = styled.p`
   text-align: center;
   color: black;
+  font-size: 18px;
   `;
-export const StyledDetailsBtn = styled.button`
-  background-color: #f0f0f0;
-  font-size: 16px;
-  color: #333;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
+
+export const StyledLink = styled(Link)`
+color: black;
+text-decoration: none;
   &:hover {
     background-color: #6ffffa;
-`;
+    border-radius: 10px;
+  }
+  `;

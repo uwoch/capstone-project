@@ -1,7 +1,7 @@
 import Link from "next/link";
 import useSWR from "swr";
 import { StyledHeading, StyledList, StyledListContainer,
-    StyledListItem, StyledImage, StyledParagraph, StyledDetailsBtn } from "./KidsList.styled";
+    StyledListItem, StyledImage, StyledParagraph, StyledLink } from "./KidsList.styled";
 
 export default function KidsList() {
   const { data, isLoading } = useSWR("/api/kids");
@@ -15,18 +15,17 @@ export default function KidsList() {
 
   return (
     <>
-{/*       <StyledHeading>Alle Meilensteine deines Kindes in einer App!</StyledHeading> */}
+      <StyledHeading>Alle Meilensteine deines Kindes in einer App!</StyledHeading>
       <StyledParagraph>Für wen möchtest du loggen?</StyledParagraph>
       <StyledListContainer>
       <StyledList>
         {data.map((kid) => (
+          <StyledLink href={`/kidDetails/${kid._id}`}>
           <StyledListItem key={kid._id}>
           <StyledImage src={kid.image} alt={kid.name} width={500} height={500} /> 
-          <p>{kid.name}</p>
-          <Link href={`/kidDetails/${kid._id}`}>
-          <StyledDetailsBtn>Hier!</StyledDetailsBtn>
-            </Link>
+          <StyledParagraph>{kid.name}</StyledParagraph>
           </StyledListItem>
+          </StyledLink>
         ))}
       </StyledList>
       </StyledListContainer>
