@@ -1,4 +1,3 @@
-import Link from "next/link";
 import useSWR from "swr";
 import { StyledHeading, StyledList, StyledListContainer,
     StyledListItem, StyledImage, StyledParagraph, StyledLink } from "./KidsList.styled";
