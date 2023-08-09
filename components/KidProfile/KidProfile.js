@@ -1,15 +1,11 @@
-import { useRouter } from "next/router";
 import Image from "next/image";
 import { StyledKidProfile, StyledGoBackLink } from "./KidProfile.styled";
 
 export default function KidProfile({
-  kidData
+  kidData,
+  onGoBack
 }) {
-  const router = useRouter();
 
-  function handleGoBack() {
-    router.back();
-  }
 
   return (
     <>
@@ -18,12 +14,13 @@ export default function KidProfile({
           width={200}
           height={200}
           src={kidData.image}
+          alt="Kid Photo"
         />
         <h2>{kidData.name} </h2>
         <h3>* {kidData.birthDate}</h3>
         <p>Erste Krankheit: {kidData.firstIllness}</p>
         <p>Erster Zahn: {kidData.firstToothDate}</p>
-      <StyledGoBackLink onClick={handleGoBack}>Zurück</StyledGoBackLink>
+      <StyledGoBackLink onClick={onGoBack}>Zurück</StyledGoBackLink>
       </StyledKidProfile>
     </>
   );

@@ -15,8 +15,12 @@ export default function KidDetails() {
     return <div>Where are the kids???</div>;
   }
 
+  function handleGoBack() {
+    router.back();
+  }
   return (
     <KidProfile
+    onGoBack={handleGoBack}
       kidData={data}
     />
   );

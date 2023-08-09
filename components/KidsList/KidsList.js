@@ -15,8 +15,8 @@ export default function KidsList() {
 
   return (
     <>
-      <StyledHeading>Alle Meilensteine deines Kindes in einer App!</StyledHeading>
-      <StyledParagraph>Für welches Kind möchtest du loggen?</StyledParagraph>
+{/*       <StyledHeading>Alle Meilensteine deines Kindes in einer App!</StyledHeading> */}
+      <StyledParagraph>Für wen möchtest du loggen?</StyledParagraph>
       <StyledListContainer>
       <StyledList>
         {data.map((kid) => (
@@ -24,7 +24,7 @@ export default function KidsList() {
           <StyledImage src={kid.image} alt={kid.name} width={500} height={500} /> 
           <p>{kid.name}</p>
           <Link href={`/kidDetails/${kid._id}`}>
-          <StyledDetailsBtn>Details</StyledDetailsBtn>
+          <StyledDetailsBtn>Hier!</StyledDetailsBtn>
             </Link>
           </StyledListItem>
         ))}
