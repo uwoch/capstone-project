@@ -1,8 +1,6 @@
 import useSWR from "swr";
 import { StyledHeading, StyledList, StyledListContainer,
-    StyledListItem, StyledImage, StyledParagraph } from "./KidsList.styled";
-
-/* const fetcher = (url) => fetch(url).then((res) => res.json()); */
+    StyledListItem, StyledImage, StyledParagraph, StyledLink } from "./KidsList.styled";
 
 export default function KidsList() {
   const { data, isLoading } = useSWR("/api/kids");
@@ -17,14 +15,16 @@ export default function KidsList() {
   return (
     <>
       <StyledHeading>Alle Meilensteine deines Kindes in einer App!</StyledHeading>
-      <StyledParagraph>Für welches Kind möchtest du loggen?</StyledParagraph>
+      <StyledParagraph>Für wen möchtest du loggen?</StyledParagraph>
       <StyledListContainer>
       <StyledList>
         {data.map((kid) => (
-          <StyledListItem key={kid._id}>
+          <StyledLink href={`/kidDetails/${kid._id}`} key={kid._id}>
+          <StyledListItem>
           <StyledImage src={kid.image} alt={kid.name} width={500} height={500} /> 
-          <p>{kid.name}</p>
+          <StyledParagraph>{kid.name}</StyledParagraph>
           </StyledListItem>
+          </StyledLink>
         ))}
       </StyledList>
       </StyledListContainer>
