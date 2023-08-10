@@ -1,26 +1,46 @@
 [
     {
       "name": "Pixie Fizz",
-      "birthDate": 2012-02-01,
-      "firstToothDate": 2012-07-22,
-      "firstIllness": "cough"
+      "birthDate": "2010-02-01",
+      "firstToothDate": "2010-07-22",
+      "firstIllness": "Husten",
+      "firstIllnessDate": "2010-05-19",
+      "firstBigEvent": "Circus mit Oma",
+      "firstBigEventDate": "2011-03-23",
+      "ridingTheBike": "2014-08-05",
+      "image": "https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/kids-log/Pixie-Fizz_isfold.png"
     },
     {
       "name": "Jinx Bumblebee",
-      "birthDate": "10.04.2014",
-      "firstToothDate": "22.09.2014",
-      "firstIllnesss": "sniffles"
+      "birthDate": "2014-04-10",
+      "firstToothDate": "2014-09-22",
+      "firstIllness": "Schnupfen",
+      "firstIllnessDate": "2014-07-29",
+      "firstBigEvent": "Zoo in München",
+      "firstBigEventDate": "2015-06-17",
+      "ridingTheBike": "2018-10-08",
+      "image": "https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882039/kids-log/Jinx-Bumblebee_jno5ay.png"
     },
     {
       "name": "Zippy Snickerdoodle",
-      "birthDate": "20.06.2016",
-      "firstToothDate": "22.11.2016",
-      "firstIllness": "flu"
+      "birthDate": "2016-06-20",
+      "firstToothDate": "2016-11-22",
+      "firstIllness": "Grippe",
+      "firstIllnessDate": "2016-09-29",
+      "firstBigEvent": "Flug nach Neuseeland",
+      "firstBigEventDate": "2017-12-23",
+      "ridingTheBike": "2020-04-10",
+      "image": "https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882031/kids-log/Zippy-Snickerdoodle_h0lc3n.png"
     },
     {
       "name": "Boo",
-      "birthDate": "30.08.2018",
-      "firstToothDate": "22.01.2019",
-      "firstIllness": "middle ear infection"
+      "birthDate": "2018-08-30",
+      "firstToothDate": "2019-01-22",
+      "firstIllness": "Drei-Tage-Fieber",
+      "firstIllnessDate": "2018-12-19",
+      "firstBigEvent": "Urlaub in Irland",
+      "firstBigEventDate": "2019-08-14",
+      "ridingTheBike": "2022-09-22",
+      "image": "https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882043/kids-log/Boo_iuuqnm.png"
     }
   ]
