@@ -15,10 +15,10 @@ export default function AddEvent() {
       body: JSON.stringify(data),
     });
     if (res.status === 400) {
-      alert("This coffee already exists");
+      alert("Das Ereignis existiert schon.");
     }
     if (res.status === 418) {
-      alert("You can't submit empty fields and/or just numbers.");
+      alert("Leere Felder dürfen nicht abgeschickt werden."); 
     }
     if (res.ok) {
       router.push("/");
