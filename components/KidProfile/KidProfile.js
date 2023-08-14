@@ -17,12 +17,7 @@ export default function KidProfile({
         />
         <h2>{kidData.name} </h2>
         <h3>* {formatDate(kidData.birthDate)}</h3>
-        {/* <StyledEventCard></StyledEventCard> */}
-       {/*  <p>Erste Krankheit: {kidData.firstIllness} {formatDate(kidData.firstIllnessDate)}</p>
-        <p>Erster Zahn: {formatDate(kidData.firstToothDate)}</p>
-        <p>Erstes großes Event: {kidData.firstBigEvent} {formatDate(kidData.firstBigEventDate)}</p>
-        <p>Fahrrad fahren: {formatDate(kidData.ridingTheBikeDate)}</p> */}
-
+  
       <StyledGoBackButton onClick={onGoBack}>Zurück</StyledGoBackButton>
      {/*  <StyledEditButton>Infos bearbeiten</StyledEditButton> */}
       <StyledAddEventLink href={"/addevent"}>Ereignis hinzufügen</StyledAddEventLink>

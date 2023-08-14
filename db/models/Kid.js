@@ -7,7 +7,7 @@ const kidSchema = new Schema({
   image: { type: String, required: true },
   name: { type: String, required: true },
   birthDate: { type: Date, required: true },
-  kidevents: { type: [Schema.Types.ObjectId], ref: "Event"},
+  events: { type: [Schema.Types.ObjectId], ref: "Event"},
 });
 
 const Kid =
