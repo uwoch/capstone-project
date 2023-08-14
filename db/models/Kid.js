@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-/* const eventSchema = new Schema({
+const eventSchema = new Schema({
 eventType: { type: String, required: true },
 date: Date,
-}); */
+});
 
 const kidSchema = new Schema({
   image: { type: String, required: true },
   name: { type: String, required: true },
   birthDate: { type: Date, required: true },
- /*  events: [eventSchema], */
+  events: [eventSchema],
 });
 
 const Kid =
