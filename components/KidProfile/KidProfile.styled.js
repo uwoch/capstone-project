@@ -40,7 +40,7 @@ export const StyledEditButton = styled.button`
   }
 `;
 
-export const StyledAddEventLink = styled(Link)`
+export const StyledBackLink = styled(Link)`
   background-color: #f0f0f0;
   font-size: 1rem;
   color: #333;
@@ -53,4 +53,14 @@ export const StyledAddEventLink = styled(Link)`
   &:hover {
     background-color: #6ffffa;
   }
+`;
+
+export const StyledList = styled.ul`
+  list-style-type: none;
+${'' /*   display: grid; */}
+${'' /*   gap: 1rem; */}
+  justify-items: center;
+  padding: 0px;
+  align-items: center;
+
 `;

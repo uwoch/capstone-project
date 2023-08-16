@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { StyledKidCard, StyledGoBackButton, StyledEditButton, StyledAddEventLink } from "./KidProfile.styled";
+import { StyledKidCard, StyledEditButton, StyledBackLink, StyledList } from "./KidProfile.styled";
 import { formatDate } from "../../resources/dateUtils";
 import EventForm from "../EventForm/index";
 import useSWR from "swr";
@@ -59,18 +59,17 @@ export default function KidProfile() {
         />
         <h2>{data.name} </h2>
         <h3>* {formatDate(data.birthDate)}</h3>  
-      <ul>
+      <StyledList>
       {data?.events?.map((event) => (
           <li key={event._id}>
            <p>{event.title}</p>
-           <p>{event.date}</p>
-          <p>{event.image}</p>
+    {/*        <p>{event.date}</p>
+          <p>{event.image}</p> */}
           </li>))}
-      </ul>
+      </StyledList>
       <EventForm kidData={data}/>  
-     {/*  <StyledGoBackButton onClick={onGoBack}>Zurück</StyledGoBackButton> */}
      {/*  <StyledEditButton>Infos bearbeiten</StyledEditButton> */}
-      <StyledAddEventLink href={"/"}>Zurück</StyledAddEventLink>
+      <StyledBackLink href={"/"}>Zurück</StyledBackLink>
       </StyledKidCard>
   );
 }}
