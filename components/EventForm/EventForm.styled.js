@@ -63,3 +63,8 @@ export const StyledCldUploadButton = styled(CldUploadButton)`
     background-color: #f0f0f0;
   }
 `;
+export const StyledHeading = styled.h2`
+  text-align: center;
+  color: black;
+`;
+

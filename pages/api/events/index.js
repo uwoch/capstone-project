@@ -11,7 +11,7 @@ export default async function handler(request, response) {
       const eventData = request.body;
       const dataEvents = await Event.create(eventData);
 
-      response.status(201).json({ status: "Review created", data: dataEvents });
+      response.status(201).json({ status: "Event created", data: dataEvents });
     } catch (error) {
       console.log(error);
       response.status(400).json({ error: error.message });

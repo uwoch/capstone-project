@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-export const StyledKidProfile = styled.article`
+export const StyledKidCard = styled.article`
   align-items: center;
   padding: 1.2rem;
   text-align: center;

@@ -1,4 +1,4 @@
-import Form from "@/components/AddEventForm/AddEventForm";
+import EventForm from "@/components/EventForm";
 import { useRouter } from "next/router";
 
 export default function AddEvent() {
@@ -25,7 +25,7 @@ export default function AddEvent() {
     }
   
   }
-  return <Form 
+  return <EventForm
     onSubmit={addEvent}
     />;
 }
