@@ -12,7 +12,7 @@ export default function KidProfile() {
 
   const { data, isLoading, mutate} = useSWR(`/api/kids/${id}`);
   
-  async function handleEditKid(event) {
+ /*  async function handleEditKid(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -39,7 +39,7 @@ export default function KidProfile() {
     }
 
     router.push("/");
-  }
+  } */
   if (isLoading) {
     return <div>Loading...</div>;
   }

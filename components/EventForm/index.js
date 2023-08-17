@@ -71,7 +71,7 @@ if (event.event === "success") {
             id="date"
             name="date"
             onChange={(date) => setStartDate(date)}
-            dateFormat="dd/MM/yyyy"
+            dateFormat="yyyy/MM/dd"
             selected={startDate}
           />
           {/* <p>Hier kannst du ein Bild des Ereignisses hochladen:</p>
