@@ -4,8 +4,8 @@ const { Schema } = mongoose;
 
 const eventSchema = new Schema({
   title: { type: String, required: true},
-/*   date: { type: Date, required: true }, */
-/*   image: Buffer, */
+  date: { type: Date, required: true },
+ /*  image: { type: String, required: false}, */
 });
 
 const Event =

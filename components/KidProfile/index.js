@@ -63,8 +63,8 @@ export default function KidProfile() {
       {data?.events?.map((event) => (
           <li key={event._id}>
            <p>{event.title}</p>
-    {/*        <p>{event.date}</p>
-          <p>{event.image}</p> */}
+           <p>{formatDate(event.date)}</p>
+        {/*   <p>{event.image}</p> */}
           </li>))}
       </StyledList>
       <EventForm kidData={data}/>  

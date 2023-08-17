@@ -40,10 +40,11 @@ export default function EventForm({ kidData }) {
     }
   }
   
-/*   const today = new Date();
+  const today = new Date();
   const [startDate, setStartDate] = useState(new Date());
   
-  const [image, setImage] = useState();
+
+/*   const [image, setImage] = useState();
   function onUploadImage(event) {
 if (event.event === "success") {
   setImage({
@@ -64,17 +65,16 @@ if (event.event === "success") {
         name="title"
         placeholder="1. Zahn, Läuft, Fährt Fahrrad..."
       />
-      {/* <StyledLabel htmlFor="date">Datum</StyledLabel>
-      <StyledDatePicker
+      <StyledLabel htmlFor="date">Datum</StyledLabel>
+       <StyledDatePicker
             type="date"
             id="date"
             name="date"
-            selected={startDate}
             onChange={(date) => setStartDate(date)}
             dateFormat="dd/MM/yyyy"
-            maxDate={today}
+            selected={startDate}
           />
-          <p>Hier kannst du ein Bild des Ereignisses hochladen:</p>
+          {/* <p>Hier kannst du ein Bild des Ereignisses hochladen:</p>
        <StyledCldUploadButton onUpload={onUploadImage} uploadPreset="t4c2yyvk">Bild hochladen</StyledCldUploadButton> 
          
        {image && (
