@@ -66,7 +66,7 @@ if (event.event === "success") {
         placeholder="1. Zahn, Läuft, Fährt Fahrrad..."
         required
         minLength={5}
-        maxLength={20}
+        maxLength={100}
         pattern="[a-zA-Z0-9-]+"
       />
       <StyledLabel htmlFor="date">Datum</StyledLabel>

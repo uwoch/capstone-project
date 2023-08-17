@@ -32,7 +32,7 @@ export const StyledSaveButton = styled.button`
   margin: 20px;
   cursor: pointer;
   &:hover {
-    background-color: #6ffffa;
+    background-color: orange;
   }
 `;
 export const StyledGoBackButton = styled.button`
