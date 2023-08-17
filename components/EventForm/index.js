@@ -60,10 +60,14 @@ if (event.event === "success") {
      <StyledHeading>Erstelle ein neues Ereignis</StyledHeading>
       <StyledLabel htmlFor="title">Ereignis</StyledLabel>
       <StyledInput
-        type="title"
+        type="text"
         id="title"
         name="title"
         placeholder="1. Zahn, Läuft, Fährt Fahrrad..."
+        required
+        minLength={5}
+        maxLength={20}
+        pattern="[a-zA-Z0-9-]+"
       />
       <StyledLabel htmlFor="date">Datum</StyledLabel>
        <StyledDatePicker
@@ -73,6 +77,7 @@ if (event.event === "success") {
             onChange={(date) => setStartDate(date)}
             dateFormat="yyyy/MM/dd"
             selected={startDate}
+            required
           />
           {/* <p>Hier kannst du ein Bild des Ereignisses hochladen:</p>
        <StyledCldUploadButton onUpload={onUploadImage} uploadPreset="t4c2yyvk">Bild hochladen</StyledCldUploadButton> 
@@ -88,7 +93,7 @@ if (event.event === "success") {
         name="image"
         />
        )} */}
-      <StyledSaveButton type="submit">Speichern</StyledSaveButton>
+      <StyledSaveButton type="submit">Log hinzufügen</StyledSaveButton>
     </StyledForm>
   );
 }
