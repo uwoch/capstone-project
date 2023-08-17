@@ -78,6 +78,7 @@ if (event.event === "success") {
             dateFormat="yyyy/MM/dd"
             selected={startDate}
             required
+            maxDate={today}
           />
           {/* <p>Hier kannst du ein Bild des Ereignisses hochladen:</p>
        <StyledCldUploadButton onUpload={onUploadImage} uploadPreset="t4c2yyvk">Bild hochladen</StyledCldUploadButton> 
