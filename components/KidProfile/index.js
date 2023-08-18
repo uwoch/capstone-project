@@ -6,40 +6,11 @@ import useSWR from "swr";
 import { useRouter } from "next/router";
 
 export default function KidProfile() {
- /*  const [isEditMode, setIsEditMode] = useState(false); */
   const router = useRouter();
   const { id } = router.query;
 
   const { data, isLoading, mutate} = useSWR(`/api/kids/${id}`);
   
- /*  async function handleEditKid(event) {
-    event.preventDefault();
-
-    const formData = new FormData(event.target);
-    const kidData = Object.fromEntries(formData);
-    
-    const response = await fetch(`/api/kids/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(kidData),
-    });
-
-    if (response.ok) {
-      mutate();
-    }
-  }
-  async function handleDeleteKid() {
-    const response = await fetch(`/api/kids/${id}`, { method: "DELETE" });
-
-    if (!response.ok) {
-      console.log(response.status);
-      return <h1>Something gone wrong!</h1>;
-    }
-
-    router.push("/");
-  } */
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -68,7 +39,6 @@ export default function KidProfile() {
           </li>))}
       </StyledList>
       <EventForm kidData={data}/>  
-     {/*  <StyledEditButton>Infos bearbeiten</StyledEditButton> */}
       <StyledBackLink href={"/"}>Zurück</StyledBackLink>
       </StyledKidCard>
   );
