@@ -1,48 +1,13 @@
 import { StyledForm, StyledHeading, StyledLabel, StyledInput, StyledSaveButton, StyledCldUploadButton, StyledGoBackButton } from "./EventForm.styled";
 import StyledDatePicker from "./StyledDatePicker";
 import { useState } from "react";
-import Image from "next/image";
-import useSWR from "swr";
+/* import Image from "next/image"; */
 
 
-export default function EventForm({ kidData }) {
-  const { mutate } = useSWR(`/api/kids/${kidData?._id}`);
-  
-  async function handleSubmit(event) {
-    event.preventDefault();
-
-    const formData = new FormData(event.target);
-    const eventData = Object.fromEntries(formData);
-
-    const responseEvent = await fetch("/api/events", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(eventData),
-    });
-
-    if (responseEvent.ok) {
-      const data = await responseEvent.json();
-      const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          events: [...kidData?.events, data.data._id],
-        }),
-      });
-
-      if (responseKid.ok) {
-        mutate();
-      }
-    }
-  }
+export default function EventForm({ handleSubmit }) {
   
   const today = new Date();
   const [startDate, setStartDate] = useState(new Date());
-  
 
 /*   const [image, setImage] = useState();
   function onUploadImage(event) {

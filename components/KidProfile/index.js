@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { StyledKidCard, StyledEditButton, StyledBackLink, StyledList } from "./KidProfile.styled";
+import { StyledKidCard, StyledEditButton, StyledBackLink, StyledEventList } from "./KidProfile.styled";
 import { formatDate } from "../../resources/dateUtils";
-import EventForm from "../EventForm/index";
+import EventForm from "../EventForm";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
-export default function KidProfile() {
+export default function KidProfile({ handleSubmit }) {
   const router = useRouter();
   const { id } = router.query;
 
@@ -30,15 +30,15 @@ export default function KidProfile() {
         />
         <h2>{data.name} </h2>
         <h3>* {formatDate(data.birthDate)}</h3>  
-      <StyledList>
+      <StyledEventList>
       {data?.events?.map((event) => (
           <li key={event._id}>
            <p>{event.title}</p>
            <p>{formatDate(event.date)}</p>
         {/*   <p>{event.image}</p> */}
           </li>))}
-      </StyledList>
-      <EventForm kidData={data}/>  
+      </StyledEventList>
+      <EventForm onSubmit={handleSubmit}/>  
       <StyledBackLink href={"/"}>Zurück</StyledBackLink>
       </StyledKidCard>
   );

@@ -55,10 +55,8 @@ export const StyledBackLink = styled(Link)`
   }
 `;
 
-export const StyledList = styled.ul`
+export const StyledEventList = styled.ul`
   list-style-type: none;
-${'' /*   display: grid; */}
-${'' /*   gap: 1rem; */}
   justify-items: center;
   padding: 0px;
   align-items: center;
