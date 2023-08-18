@@ -1,7 +1,12 @@
 import KidProfile from "@/components/KidProfile";
+import useSWR from "swr";
+import { useRouter } from "next/router";
 
 export default function KidDetails() {
-
+  const router = useRouter();
+  const { id } = router.query;
+  const { data, isLoading, mutate} = useSWR(`/api/kids/${id}`);
+  
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -33,9 +38,17 @@ export default function KidDetails() {
       }
     }
   }
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!data) {
+    return <div>Where are the kids???</div>;
+  }
+
   return (
     <KidProfile
-      onSubmit={handleSubmit}
-    />
+       onSubmit={handleSubmit}
+       kidData={data} />
   );
 }

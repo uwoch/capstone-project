@@ -4,7 +4,7 @@ import { useState } from "react";
 /* import Image from "next/image"; */
 
 
-export default function EventForm({ handleSubmit }) {
+export default function EventForm({ onSubmit }) {
   
   const today = new Date();
   const [startDate, setStartDate] = useState(new Date());
@@ -21,7 +21,7 @@ if (event.event === "success") {
 } */
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <StyledForm onSubmit={onSubmit}>
      <StyledHeading>Erstelle ein neues Ereignis</StyledHeading>
       <StyledLabel htmlFor="title">Ereignis</StyledLabel>
       <StyledInput
@@ -59,7 +59,7 @@ if (event.event === "success") {
         name="image"
         />
        )} */}
-      <StyledSaveButton type="submit">Log hinzufügen</StyledSaveButton>
+      <StyledSaveButton>Log hinzufügen</StyledSaveButton>
     </StyledForm>
   );
 }
