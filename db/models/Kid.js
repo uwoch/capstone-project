@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
+import "./Event";
+
 const { Schema } = mongoose;
 
 const kidSchema = new Schema({
-  name: { type: String, required: true },
-  birthDate: { type: String, required: true },
-  firstToothDate: { type: String, required: true },
-  firstIllness: { type: String, required: true },
   image: { type: String, required: true },
+  name: { type: String, required: true },
+  birthDate: { type: Date, required: true },
+  events: { type: [Schema.Types.ObjectId], ref: "Event"},
 });
 
 const Kid =
