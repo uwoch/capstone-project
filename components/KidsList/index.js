@@ -2,7 +2,6 @@ import useSWR from "swr";
 import { StyledHeading, StyledList, StyledListContainer,
     StyledListItem, StyledImage, StyledParagraph, StyledLink } from "./KidsList.styled";
 
-
 export default function KidsList() {
   const { data, isLoading } = useSWR("/api/kids");
 

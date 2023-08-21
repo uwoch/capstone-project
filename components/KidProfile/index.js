@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { StyledKidCard, StyledEditButton, StyledBackLink, StyledEventList } from "./KidProfile.styled";
+import { StyledKidCard, StyledBackLink, StyledEventList } from "./KidProfile.styled";
 import { formatDate } from "../../resources/dateUtils";
 import EventForm from "../EventForm";
 
@@ -23,7 +23,6 @@ export default function KidProfile({
           <li key={event._id}>
            <p>{event.title}</p>
            <p>{formatDate(event.date)}</p>
-        {/*   <p>{event.image}</p> */}
           </li>))}
       </StyledEventList>
       <EventForm onSubmit={onSubmit}/>  

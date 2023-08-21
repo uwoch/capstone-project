@@ -6,7 +6,6 @@ export default function KidDetails() {
   const router = useRouter();
   const { id } = router.query;
   const { data: kidData, isLoading, mutate} = useSWR(`/api/kids/${id}`);
-  console.log(kidData);
   
   async function handleSubmit(event) {
     event.preventDefault();
