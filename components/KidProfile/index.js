@@ -5,7 +5,7 @@ import EventForm from "../EventForm";
 
 export default function KidProfile({
   kidData, 
-  handleSubmit }) 
+  onSubmit }) 
   {
 
   return (
@@ -26,7 +26,7 @@ export default function KidProfile({
         {/*   <p>{event.image}</p> */}
           </li>))}
       </StyledEventList>
-      <EventForm onSubmit={handleSubmit}/>  
+      <EventForm onSubmit={onSubmit}/>  
       <StyledBackLink href={"/"}>Zurück</StyledBackLink>
       </StyledKidCard>
   );

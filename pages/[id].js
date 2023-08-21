@@ -5,7 +5,8 @@ import { useRouter } from "next/router";
 export default function KidDetails() {
   const router = useRouter();
   const { id } = router.query;
-  const { data, isLoading, mutate} = useSWR(`/api/kids/${id}`);
+  const { data: kidData, isLoading, mutate} = useSWR(`/api/kids/${id}`);
+  console.log(kidData);
   
   async function handleSubmit(event) {
     event.preventDefault();
@@ -22,33 +23,37 @@ export default function KidDetails() {
     });
 
     if (responseEvent.ok) {
-      const data = await responseEvent.json();
+      const eventData = await responseEvent.json();
+
+      if (kidData) {
       const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          events: [...kidData?.events, data.data._id],
+          events: [...kidData?.events, eventData.data._id],
         }),
       });
 
       if (responseKid.ok) {
         mutate();
+      
       }
     }
   }
+}
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  if (!data) {
+  if (!kidData) {
     return <div>Where are the kids???</div>;
   }
 
   return (
     <KidProfile
        onSubmit={handleSubmit}
-       kidData={data} />
+       kidData={kidData} />
   );
 }
