@@ -20,7 +20,7 @@ export default function EventForm({ onSubmit, title, isEditMode, date }) {
         defaultValue={title}
         minLength={3}
         maxLength={100}
-        pattern="[A-Za-z0-9.\s]*"
+        pattern="[a-zA-Z0-9-]+"
         placeholder="1. Zahn, Laufen, Schläft durch..."
       />
       <StyledLabel htmlFor="date">Datum</StyledLabel>

@@ -17,6 +17,7 @@ export default async function handler(request, response) {
       console.log(error);
       response.status(400).json({ error: error.message });
     }
+    
   } else if (request.method === "PUT") {
     await Event.findByIdAndUpdate(id, {
       $set: request.body,
