@@ -37,9 +37,10 @@ export default function KidDetails() {
 
       if (responseKid.ok) {
         mutate();
-        event.target.reset();
+        
       }
     }
+    event.target.reset();
   }
 }
   if (isLoading) {

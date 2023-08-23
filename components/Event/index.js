@@ -1,15 +1,16 @@
 import { useState } from "react";
-import EditForm from "../EditForm";
+import EventForm from "../EventForm";
 import { useRouter } from "next/router";
 import { StyledListItem, StyledCancelButton } from "./Event.styled";
 import { formatDate } from "../../resources/dateUtils";
 
-export default function Event({ event, kidData }) {
+export default function Event({ event, kidsData, mutate }) {
   const router = useRouter();
 
   const [isEditMode, setIsEditMode] = useState(false);
 
   async function handleEditEvent(event) {
+    console.log("Event Object in handleEditEvent:", event);
     event.preventDefault();
     const formData = new FormData(event.target);
     const eventData = Object.fromEntries(formData);
@@ -27,6 +28,7 @@ export default function Event({ event, kidData }) {
     }
   }
   async function handleDeleteEvent() {
+    console.log("Event Object in handleDeleteEvent:", event);
     const responseEvent = await fetch(`/api/events/${event?._id}`, {
       method: "DELETE",
     });
@@ -35,20 +37,20 @@ export default function Event({ event, kidData }) {
     }
 
     if (responseEvent.ok) {
-      const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
+      const responseKid = await fetch(`/api/kids/${kidsData?._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          events: kidData?.events.filter((oneEvent) => {
+          events: kidsData?.events.filter((oneEvent) => {
             return oneEvent._id == event._id ? false : true;
           }),
         }),
       });
       if (responseKid.ok) {
         mutate();
-        router.push(`/kids/${kidData?._id}`);
+        router.push(`/kids/${kidsData?._id}`);
       }
     }
   }
@@ -56,12 +58,13 @@ export default function Event({ event, kidData }) {
   return (
     <StyledListItem>
       <p>{event.title}</p>{" "}
-     {/*  <p>{formatDate(event.date)}</p> */}
+      <p>{formatDate(event.date)}</p>
       <div>
         {isEditMode && (
-          <EditForm
+          <EventForm
             onSubmit={handleEditEvent}
             title={event.title}
+            date={event.date}
             isEditMode={true}
           />
         )}
@@ -80,13 +83,13 @@ export default function Event({ event, kidData }) {
           Ereignis löschen
         </button>
       ) : (
-        <StyledCancelButton
+        <button
           type="button"
           onClick={() => {
             setIsEditMode(!isEditMode);
           }}>
         Abbrechen
-        </StyledCancelButton>
+        </button>
       )}
     </StyledListItem>
   );

@@ -7,7 +7,6 @@ import Event from "../Event";
 export default function KidProfile({
   kidData, 
   onSubmit,
-  events,
   mutate }) 
   {
 
@@ -24,7 +23,7 @@ export default function KidProfile({
       <StyledEventList>
         {kidData?.events?.map((event) => (
           <Event
-          key={event._id} 
+          key={event._id} event={event} kidData={kidData} mutate={mutate}
          />
           ))}
       </StyledEventList>
