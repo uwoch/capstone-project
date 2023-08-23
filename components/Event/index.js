@@ -1,7 +1,7 @@
 import { useState } from "react";
 import EventForm from "../EventForm";
 import { useRouter } from "next/router";
-import { StyledListItem, StyledCancelButton } from "./Event.styled";
+import { StyledListItem } from "./Event.styled";
 import { formatDate } from "../../resources/dateUtils";
 
 export default function Event({ event, kidsData, mutate }) {
