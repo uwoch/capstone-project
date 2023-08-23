@@ -18,7 +18,7 @@ export default function EventForm({ onSubmit }) {
         name="title"
         placeholder="1. Zahn, Läuft, Fährt Fahrrad..."
         required
-        minLength={5}
+        minLength={3}
         maxLength={100}
         pattern="[a-zA-Z0-9-]+"
       />

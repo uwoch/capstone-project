@@ -2,10 +2,13 @@ import Image from "next/image";
 import { StyledKidCard, StyledBackLink, StyledEditButton, StyledEventList } from "./KidProfile.styled";
 import { formatDate } from "../../resources/dateUtils";
 import EventForm from "../EventForm";
+import Event from "../Event";
 
 export default function KidProfile({
   kidData, 
-  onSubmit }) 
+  onSubmit,
+  events,
+  mutate }) 
   {
 
   return (
@@ -19,13 +22,12 @@ export default function KidProfile({
         <h2>{kidData.name} </h2>
         <h3>* {formatDate(kidData.birthDate)}</h3>  
       <StyledEventList>
-      {kidData?.events?.map((event) => (
-          <li key={event._id}>
-           <p>{event.title}</p>
-           <p>{formatDate(event.date)}</p>
-          </li>))}
+        {kidData?.events?.map((event) => (
+          <Event
+          key={event._id} 
+         />
+          ))}
       </StyledEventList>
-      <StyledEditButton>Logs bearbeiten</StyledEditButton>
       <EventForm onSubmit={onSubmit}/>  
       <StyledBackLink href={"/"}>Zurück</StyledBackLink>
       </StyledKidCard>

@@ -1,11 +1,11 @@
 import { StyledForm, StyledHeading, StyledInput, StyledLabel, StyledSaveButton } from "./EditForm.styled";
-import StyledDatePicker from "..EventForm/StyledDatePicker";
+/* import StyledDatePicker from "..EventForm/StyledDatePicker"; */
 
-export default function EditForm({ onSubmit, title, date, isEditMode }) {
+export default function EditForm({ onSubmit, title, isEditMode }) {
   return (
     <StyledForm onSubmit={onSubmit}>
-      <StyledHeading>{isEditMode ? "Edit the Event" : "Add a new Event"}</StyledHeading>
-      <StyledLabel htmlFor="title">Ereignis</StyledLabel>
+      <StyledHeading>{isEditMode ? "Bearbeite das Ereignis" : "Add a new Event"}</StyledHeading>
+      <StyledLabel htmlFor="title"></StyledLabel>
       <StyledInput
         type="text"
         id="title"
@@ -13,7 +13,7 @@ export default function EditForm({ onSubmit, title, date, isEditMode }) {
         pattern="[a-zA-Z0-9-]+"
         defaultValue={title}
       />
-       <StyledLabel htmlFor="date">Datum</StyledLabel>
+    {/*    <StyledLabel htmlFor="date">Datum</StyledLabel>
        <StyledDatePicker
             type="date"
             id="date"
@@ -23,7 +23,7 @@ export default function EditForm({ onSubmit, title, date, isEditMode }) {
             selected={startDate}
             maxDate={today}
             defaultValue={date}
-          />
+          /> */}
       <StyledSaveButton type="submit">Speichern</StyledSaveButton>
     </StyledForm>
   );
