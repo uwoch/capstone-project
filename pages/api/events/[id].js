@@ -6,7 +6,6 @@ export default async function handler(request, response) {
   const { id } = request.query;
   
   if (request.method === "GET") {
-    console.log("ID:", id);
     const events = await Event.findById(id);
     return response.status(200).json(events);
   

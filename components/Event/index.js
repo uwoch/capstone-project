@@ -10,7 +10,6 @@ export default function Event({ event, kidData, mutate }) {
   const [isEditMode, setIsEditMode] = useState(false);
 
   async function handleEditEvent(e) {
-    console.log("Event Object in handleEditEvent:", e);
     e.preventDefault();
     const formData = new FormData(e.target);
     const eventData = Object.fromEntries(formData);
@@ -28,7 +27,6 @@ export default function Event({ event, kidData, mutate }) {
     }
   }
   async function handleDeleteEvent(event) {
-    console.log("Event Object in handleDeleteEvent:", event);
     const responseEvent = await fetch(`/api/events/${event?._id}`, {
       method: "DELETE",
     });
@@ -47,7 +45,6 @@ export default function Event({ event, kidData, mutate }) {
       });
       if (responseKid.ok) {
         mutate();
-     /*    router.push(`/kids/${kidData?._id}`); */
       }
     }
   }
