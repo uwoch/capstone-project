@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { StyledListItem } from "./Event.styled";
 import { formatDate } from "../../resources/dateUtils";
 
-export default function Event({ event, kidsData, mutate }) {
+export default function Event({ event, kidData, mutate }) {
   const router = useRouter();
 
   const [isEditMode, setIsEditMode] = useState(false);
@@ -37,24 +37,23 @@ export default function Event({ event, kidsData, mutate }) {
     }
 
     if (responseEvent.ok) {
-      const responseKid = await fetch(`/api/kids/${kidsData?._id}`, {
+      const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          events: kidsData?.events.filter((oneEvent) => {
+          events: kidData?.events.filter((oneEvent) => {
             return oneEvent._id == event._id ? false : true;
           }),
         }),
       });
       if (responseKid.ok) {
         mutate();
-        router.push(`/kids/${kidsData?._id}`);
+        router.push(`/kids/${kidData?._id}`);
       }
     }
   }
-
   return (
     <StyledListItem>
       <p>{event.title}</p>{" "}
