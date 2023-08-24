@@ -9,10 +9,10 @@ export default function Event({ event, kidsData, mutate }) {
 
   const [isEditMode, setIsEditMode] = useState(false);
 
-  async function handleEditEvent(event) {
-    console.log("Event Object in handleEditEvent:", event);
-    event.preventDefault();
-    const formData = new FormData(event.target);
+  async function handleEditEvent(e) {
+    console.log("Event Object in handleEditEvent:", e);
+    e.preventDefault();
+    const formData = new FormData(e.target);
     const eventData = Object.fromEntries(formData);
 
     const response = await fetch(`/api/events/${event?._id}`, {
