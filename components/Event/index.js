@@ -27,14 +27,11 @@ export default function Event({ event, kidData, mutate }) {
       setIsEditMode(false);
     }
   }
-  async function handleDeleteEvent() {
+  async function handleDeleteEvent(event) {
     console.log("Event Object in handleDeleteEvent:", event);
     const responseEvent = await fetch(`/api/events/${event?._id}`, {
       method: "DELETE",
     });
-    if (!responseEvent.ok) {
-      return <h1>Something went wrong!</h1>;
-    }
 
     if (responseEvent.ok) {
       const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
@@ -50,7 +47,7 @@ export default function Event({ event, kidData, mutate }) {
       });
       if (responseKid.ok) {
         mutate();
-        router.push(`/kids/${kidData?._id}`);
+     /*    router.push(`/kids/${kidData?._id}`); */
       }
     }
   }
@@ -78,7 +75,8 @@ export default function Event({ event, kidData, mutate }) {
           </button>
       ) : null}
       {!isEditMode ? (
-        <button type="button" onClick={handleDeleteEvent}>
+        <button type="button" onClick={() => handleDeleteEvent(event)}
+        >
           Ereignis löschen
         </button>
       ) : (

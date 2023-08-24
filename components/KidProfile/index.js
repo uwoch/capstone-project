@@ -23,7 +23,10 @@ export default function KidProfile({
       <StyledEventList>
         {kidData?.events?.map((event) => (
           <Event
-          key={event._id} event={event} kidData={kidData} mutate={mutate}
+          key={event._id} 
+          kidData={kidData} 
+          mutate={mutate}
+          event={event}
          />
           ))}
       </StyledEventList>
