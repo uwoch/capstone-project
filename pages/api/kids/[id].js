@@ -9,7 +9,7 @@ export default async function handler(request, response) {
     const kid = await Kid.findById(id).populate("events");
 
     if (!kid) {
-      return response.status(404).json({ status: "No infos found!" });
+      return response.status(404).json({ status: "No kid found!" });
     }
 
     response.status(200).json(kid);
@@ -17,6 +17,5 @@ export default async function handler(request, response) {
   if (request.method === "PATCH") {
     await Kid.findByIdAndUpdate(id, request.body);
     response.status(200).json({ message: "Update is successful!" });
-
   }
 }

@@ -6,6 +6,7 @@ export const StyledKidCard = styled.article`
   padding: 1.2rem;
   text-align: center;
   transition: 0.5s;
+  overflow-wrap: break-word;
   img {
     width: 200px;
     height: 200px;
@@ -60,5 +61,4 @@ export const StyledEventList = styled.ul`
   justify-items: center;
   padding: 0px;
   align-items: center;
-
 `;

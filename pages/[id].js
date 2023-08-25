@@ -37,9 +37,10 @@ export default function KidDetails() {
 
       if (responseKid.ok) {
         mutate();
-      
+        
       }
     }
+    event.target.reset();
   }
 }
   if (isLoading) {
@@ -53,6 +54,7 @@ export default function KidDetails() {
   return (
     <KidProfile
        onSubmit={handleSubmit}
-       kidData={kidData} />
+       kidData={kidData}
+       mutate={mutate} />
   );
 }
