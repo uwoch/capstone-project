@@ -25,10 +25,13 @@ export default function Event({ event, kidData, mutate }) {
     }
   }
   async function handleDeleteEvent(event) {
+    const shouldDelete = window.confirm(
+      `Möchtest du das Ereignis wirklich löschen?`
+    );
+    if (shouldDelete) {
     const responseEvent = await fetch(`/api/events/${event?._id}`, {
-      method: "DELETE",
-    });
-
+      method: "DELETE"});
+    
     if (responseEvent.ok) {
       const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
         method: "PATCH",
@@ -45,7 +48,7 @@ export default function Event({ event, kidData, mutate }) {
         mutate();
       }
     }
-  }
+  }}
   return (
     <StyledListItem>
       <p>{event.title}</p>{" "}
