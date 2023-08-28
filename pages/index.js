@@ -1,21 +1,20 @@
 import Head from "next/head";
 import styled from "styled-components";
-import { Inter } from "next/font/google";
 import KidsList from "@/components/KidsList";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Kids Log</title>
-        <meta name="description" content="Penguin Capstone Project" />
+        <meta name="description" content="Ulrikes Capstone Project" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/kidslog.ico" />
       </Head>
-      <main className={inter.className}>
-        <Heading>Willkommen bei Kids Log</Heading>
+      <main>
+        <Header>
+        </Header>
         <KidsList />
       </main>
     </>

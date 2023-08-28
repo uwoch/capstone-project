@@ -2,14 +2,11 @@ import styled from "styled-components";
 import Image from "next/image.js";
 import Link from "next/link.js";
 
-export const StyledHeading = styled.h3`
-  text-align: center;
-  color: black;
-`;
 export const StyledListContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
 `;
 export const StyledList = styled.ul`
   list-style-type: none;
@@ -44,4 +41,10 @@ export const StyledLink = styled(Link)`
     background-color: #6ffffa;
     border-radius: 10px;
   }
+  `;
+  export const StyledSection = styled.p`
+  text-align: center;
+  color: black;
+  font-size: 1rem;
+  margin-top: 150px;
   `;
