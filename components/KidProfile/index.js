@@ -31,7 +31,6 @@ export default function KidProfile({
           ))}
       </StyledEventList>
       <EventForm onSubmit={onSubmit}/>  
-      <StyledBackLink href={"/"}>Zurück</StyledBackLink>
       </StyledKidCard>
   );
 }

@@ -8,6 +8,7 @@ export const StyledKidCard = styled.article`
   transition: 0.5s;
   overflow-wrap: break-word;
   margin-top: 8rem;
+  margin-bottom: 4rem;
   img {
     width: 150px;
     height: 150px;

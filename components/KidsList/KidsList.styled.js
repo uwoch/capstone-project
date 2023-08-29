@@ -6,6 +6,7 @@ export const StyledListContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4rem;
 
 `;
 export const StyledList = styled.ul`
