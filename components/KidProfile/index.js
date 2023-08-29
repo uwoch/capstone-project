@@ -13,8 +13,8 @@ export default function KidProfile({
   return (
       <StyledKidCard>
         <Image
-          width={200}
-          height={200}
+          width={150}
+          height={150}
           src={kidData.image}
           alt="Kid Photo"
         />

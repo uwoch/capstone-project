@@ -23,8 +23,8 @@ export const StyledListItem = styled.li`
   align-items: center;
 `;
 export const StyledImage = styled(Image)`
-   width: 200px;
-   height: 200px;
+   width: 150px;
+   height: 150px;
    border-radius: 10px;
 
 `;
@@ -38,7 +38,7 @@ export const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
   &:hover {
-    background-color: #6ffffa;
+${'' /*     background-color: #6ffffa; */}
     border-radius: 10px;
   }
   `;

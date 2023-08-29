@@ -7,10 +7,10 @@ export const StyledKidCard = styled.article`
   text-align: center;
   transition: 0.5s;
   overflow-wrap: break-word;
-  margin-top: 150px;
+  margin-top: 8rem;
   img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 10px;
   }
 `;
