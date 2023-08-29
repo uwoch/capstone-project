@@ -38,10 +38,6 @@ export const StyledParagraph = styled.p`
 export const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
-  &:hover {
-${'' /*     background-color: #6ffffa; */}
-    border-radius: 10px;
-  }
   `;
   export const StyledSection = styled.p`
   text-align: center;

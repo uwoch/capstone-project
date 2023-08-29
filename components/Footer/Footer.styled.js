@@ -10,7 +10,7 @@ export const StyledFooter = styled.footer`
   background-color: #f0f0f0;
   z-index: 1;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   position: fixed;
   border-radius: 1em 1em 0em 0em;
