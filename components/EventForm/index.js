@@ -22,6 +22,7 @@ export default function EventForm({ onSubmit, title, isEditMode, date }) {
         maxLength={50}
         pattern="\S+(\s\S+)*"
         placeholder="1. Zahn, Laufen, Schläft durch..."
+        title="Es müssen mindestens 3 Zeichen eingegebenen werden. Leerzeichen dürfen nicht alleine stehen."
       />
       <StyledLabel htmlFor="date">Datum</StyledLabel>
        <StyledDatePicker

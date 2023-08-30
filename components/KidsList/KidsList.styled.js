@@ -2,14 +2,12 @@ import styled from "styled-components";
 import Image from "next/image.js";
 import Link from "next/link.js";
 
-export const StyledHeading = styled.h3`
-  text-align: center;
-  color: black;
-`;
 export const StyledListContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4rem;
+
 `;
 export const StyledList = styled.ul`
   list-style-type: none;
@@ -26,8 +24,8 @@ export const StyledListItem = styled.li`
   align-items: center;
 `;
 export const StyledImage = styled(Image)`
-   width: 200px;
-   height: 200px;
+   width: 150px;
+   height: 150px;
    border-radius: 10px;
 
 `;
@@ -40,8 +38,10 @@ export const StyledParagraph = styled.p`
 export const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
-  &:hover {
-    background-color: #6ffffa;
-    border-radius: 10px;
-  }
+  `;
+  export const StyledSection = styled.p`
+  text-align: center;
+  color: black;
+  font-size: 1rem;
+  margin-top: 150px;
   `;
