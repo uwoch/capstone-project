@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { StyledHeading, StyledList, StyledListContainer,
+import { StyledList, StyledListContainer,
     StyledListItem, StyledImage, StyledParagraph, StyledLink, StyledSection } from "./KidsList.styled";
 
 export default function KidsList() {

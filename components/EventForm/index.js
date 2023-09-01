@@ -1,5 +1,5 @@
-import { StyledForm, StyledHeading, StyledLabel, StyledInput, StyledSaveButton, StyledCldUploadButton, StyledGoBackButton } from "./EventForm.styled";
-import StyledDatePicker from "./StyledDatePicker";
+import { StyledForm, StyledHeading, StyledLabel, StyledInput, StyledSaveButton } from "./EventForm.styled";
+import { StyledDatePicker } from "../DatePicker/DatePicker.styled";
 import { useState } from "react";
 
 

@@ -2,7 +2,7 @@ import DatePicker from "react-datepicker";
 import styled from "styled-components";
 import "react-datepicker/dist/react-datepicker.css";
 
-const StyledDatePicker = styled(DatePicker)`
+export const StyledDatePicker = styled(DatePicker)`
     width: 230px;
     height: 30px;
     margin: 8px;
@@ -10,4 +10,3 @@ const StyledDatePicker = styled(DatePicker)`
     border: 1px solid #000;
 `;
 
-export default StyledDatePicker;

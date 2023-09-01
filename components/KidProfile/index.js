@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { StyledKidCard, StyledBackLink, StyledEditButton, StyledEventList } from "./KidProfile.styled";
+import { StyledKidCard, StyledEventList } from "./KidProfile.styled";
 import { formatDate } from "../../resources/dateUtils";
 import EventForm from "../EventForm";
 import Event from "../Event";
