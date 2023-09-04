@@ -11,7 +11,7 @@ export const StyledKidCard = styled.article`
   img {
     width: 150px;
     height: 150px;
-    border-radius: 10px;
+    border-radius: 0.5em;
   }
 `;
 
@@ -20,4 +20,14 @@ export const StyledEventList = styled.ul`
   justify-items: center;
   padding: 0px;
   align-items: center;
+`;
+
+export const StyledName = styled.h2`    
+  text-align: center;
+  color: black;
+`;
+
+export const StyledBirthDate = styled.h4`    
+  text-align: center;
+  color: black;
 `;

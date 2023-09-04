@@ -28,14 +28,13 @@ export const StyledInput = styled.input`
 export const StyledSaveButton = styled.button`
   background-color: #f0f0f0;
   font-size: 1rem;
-  color: #333;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.5em;
   padding: 8px 16px;
   margin: 20px;
   cursor: pointer;
   &:hover {
-    background-color: orange;
+    background-color: lightgreen;
   }
 `;
 
