@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const StyledKidCard = styled.article`
   align-items: center;
@@ -7,11 +8,6 @@ export const StyledKidCard = styled.article`
   overflow-wrap: break-word;
   margin-top: 8rem;
   margin-bottom: 4rem;
-  img {
-    width: 60%;
-    height: 60%;
-    border-radius: 0.5rem;
-  }
 `;
 
 export const StyledEventList = styled.ul`
@@ -23,10 +19,16 @@ export const StyledEventList = styled.ul`
 
 export const StyledName = styled.h2`    
   text-align: center;
-  margin-top: -0.1rem;
 `;
 
 export const StyledBirthDate = styled.h3`    
   text-align: center;
   margin-top: -1rem;
+`;
+
+export const StyledImage = styled(Image)`
+    width: 60%;
+    height: 60%;
+    border-radius: 0.5rem;
+    margin-bottom: -0.8rem;
 `;

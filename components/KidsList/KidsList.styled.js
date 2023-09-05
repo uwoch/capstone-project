@@ -19,13 +19,14 @@ export const StyledList = styled.ul`
 export const StyledListItem = styled.li`
   text-align: center;
 `;
+
 export const StyledImage = styled(Image)`
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: 80%;
     border-radius: 0.5rem;
     margin-bottom: -0.8rem;
-
 `;
+
 export const StyledParagraph = styled.p`
   text-align: center;
   font-weight: bold;
