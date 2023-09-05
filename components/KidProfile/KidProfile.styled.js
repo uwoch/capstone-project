@@ -27,8 +27,6 @@ export const StyledBirthDate = styled.h3`
 `;
 
 export const StyledImage = styled(Image)`
-    width: 60%;
-    height: 60%;
     border-radius: 0.5rem;
     margin-bottom: -0.8rem;
 `;
