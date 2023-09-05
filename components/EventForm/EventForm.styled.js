@@ -25,7 +25,7 @@ export const StyledInput = styled.input`
   border: 1px solid grey;
   margin: 0.5rem;
   height: 4vh;
-  width: 65vw;
+  width: 60vw;
 `;
 
 export const StyledSaveButton = styled.button`
