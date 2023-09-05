@@ -5,37 +5,37 @@ export const StyledForm = styled.form`
   flex-flow: column wrap;
   align-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0.5rem;
+  box-shadow: 0px 1px 5px -2px #7f8487;
+  border-radius: 0.5rem;
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
 `;
 export const StyledHeading = styled.h3`
   text-align: center;
-  color: black;
 `;
 
 export const StyledLabel = styled.label`
-  margin: 4px;
-  font-size: 1rem;
+  margin: 0.1rem;
 `;
 
 export const StyledInput = styled.input`
-  border-radius: 2px;
-  border: 1px solid #000;
-  width: 230px;
-  height: 30px;
-  margin: 8px;
+  border-radius: 0.5rem;
+  border: 1px solid grey;
+  margin: 0.5rem;
+  height: 4vh;
+  width: 65vw;
 `;
 
 export const StyledSaveButton = styled.button`
-  background-color: #f0f0f0;
+  background-color: #c1ffc1;
   font-size: 1rem;
   border: none;
-  border-radius: 0.5em;
-  padding: 8px 16px;
-  margin: 20px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0.5rem 0.5rem 0.5rem;
   cursor: pointer;
-  &:hover {
-    background-color: lightgreen;
-  }
 `;
 
 

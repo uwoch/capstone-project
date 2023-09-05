@@ -51,7 +51,7 @@ export default function Event({ event, kidData, mutate }) {
   }}
   return (
     <StyledListItem>
-      <StyledParagraph>{event.title}: {" "} {formatDate(event.date)}</StyledParagraph>
+      <StyledParagraph><strong>{event.title}:</strong> {formatDate(event.date)}</StyledParagraph>
       <div>
         {isEditMode && (
           <EventForm
@@ -68,13 +68,13 @@ export default function Event({ event, kidData, mutate }) {
           onClick={() => {
             setIsEditMode(!isEditMode);
           }}>
-          Bearbeiten
+          ✏️
           </StyledEditButton>
       ) : null}
       {!isEditMode ? (
         <StyledDeleteButton type="button" onClick={() => handleDeleteEvent(event)}
         >
-          Löschen
+          ❌
         </StyledDeleteButton>
       ) : (
         <StyledCancelButton

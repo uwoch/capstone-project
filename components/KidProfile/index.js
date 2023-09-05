@@ -19,7 +19,7 @@ export default function KidProfile({
           alt="Kid Photo"
         />
         <StyledName>{kidData.name}</StyledName>
-        <StyledBirthDate>Geburtstag: {formatDate(kidData.birthDate)}</StyledBirthDate>  
+        <StyledBirthDate>🎂 {formatDate(kidData.birthDate)}</StyledBirthDate>  
       <StyledEventList>
         {kidData?.events?.map((event) => (
           <Event

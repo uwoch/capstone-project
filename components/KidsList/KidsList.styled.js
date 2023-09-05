@@ -13,35 +13,32 @@ export const StyledList = styled.ul`
   list-style-type: none;
   display: grid;
   gap: 1rem;
-  justify-items: center;
-  padding: 0px;
-  align-items: center;
+  padding: 0rem;
 
 `;
 export const StyledListItem = styled.li`
-  margin: 0px;
   text-align: center;
-  align-items: center;
 `;
 export const StyledImage = styled(Image)`
-   width: 150px;
-   height: 150px;
-   border-radius: 10px;
+    width: 60%;
+    height: 60%;
+    border-radius: 0.5rem;
+    margin-bottom: -0.8rem;
 
 `;
 export const StyledParagraph = styled.p`
   text-align: center;
-  color: black;
-  font-size: 1rem;
+  font-weight: bold;
   `;
 
 export const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
   `;
-  export const StyledSection = styled.p`
+
+export const StyledSection = styled.p`
   text-align: center;
   color: black;
-  font-size: 1rem;
-  margin-top: 150px;
+  margin-top: 10rem;
+  font-weight: bold;
   `;

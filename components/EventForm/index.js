@@ -10,7 +10,7 @@ export default function EventForm({ onSubmit, title, isEditMode, date }) {
 
   return (
     <StyledForm onSubmit={onSubmit}>
-      <StyledHeading>{isEditMode ? "Ereignis bearbeiten:" : "Erstelle ein neues Ereignis"} </StyledHeading>
+      <StyledHeading>{isEditMode ? "Ereignis bearbeiten:" : "Erstelle ein neues Ereignis:"} </StyledHeading>
       <StyledLabel htmlFor="title">Ereignis</StyledLabel>
       <StyledInput
         type="text"

@@ -4,30 +4,29 @@ export const StyledKidCard = styled.article`
   align-items: center;
   padding: 1.2rem;
   text-align: center;
-  transition: 0.5s;
   overflow-wrap: break-word;
   margin-top: 8rem;
   margin-bottom: 4rem;
   img {
-    width: 150px;
-    height: 150px;
-    border-radius: 0.5em;
+    width: 60%;
+    height: 60%;
+    border-radius: 0.5rem;
   }
 `;
 
 export const StyledEventList = styled.ul`
   list-style-type: none;
   justify-items: center;
-  padding: 0px;
+  padding: 0rem;
   align-items: center;
 `;
 
 export const StyledName = styled.h2`    
   text-align: center;
-  color: black;
+  margin-top: -0.1rem;
 `;
 
-export const StyledBirthDate = styled.h4`    
+export const StyledBirthDate = styled.h3`    
   text-align: center;
-  color: black;
+  margin-top: -1rem;
 `;

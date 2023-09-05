@@ -1,54 +1,46 @@
 import styled from "styled-components";
 
 export const StyledListItem = styled.li`
-  padding: 0.5em;
+  padding: 0.5rem;
   align-items: center;
   
 `;
 
 export const StyledParagraph = styled.p`
-  height: 30px;
-  padding: 0.2rem;
+  height: 100%;
+  padding: 0.5rem;
   box-shadow: 0px 1px 5px -2px #7f8487;
-  border-radius: 0.5em;
+  border-radius: 0.5rem;
   font-size: 1em;
+  max-width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
 `;
 
 export const StyledEditButton = styled.button`
   background-color: #f0f0f0;
-  font-size: 1em;
   border: none;
-  border-radius: 0.5em;
-  padding: 8px 8px;
-  margin: 5px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
   cursor: pointer;
-  &:hover {
-    background-color: lightblue;
-  }
 `;
 
 export const StyledDeleteButton = styled.button`
   background-color: #f0f0f0;
-  font-size: 1em;
   border: none;
-  border-radius: 0.5em;
-  padding: 8px 8px;
-  margin: 5px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
   cursor: pointer;
-  &:hover {
-    background-color: #DB7093;
-  }
 `;
 
 export const StyledCancelButton = styled.button`
-  background-color: #f0f0f0;
-  font-size: 1em;
+  background-color: #ffe0e0;
+  font-size: 1rem;
   border: none;
-  border-radius: 0.5em;
-  padding: 8px 16px;
-  margin: 5px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 2rem 0.5rem 0.5rem 0.5rem;
   cursor: pointer;
-  &:hover {
-    background-color: #DB7093;
-  }
 `;
