@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { StyledKidCard, StyledBackLink, StyledEditButton, StyledEventList } from "./KidProfile.styled";
+import { StyledKidCard, StyledEventList, StyledName, StyledBirthDate, StyledImage } from "./KidProfile.styled";
 import { formatDate } from "../../resources/dateUtils";
 import EventForm from "../EventForm";
 import Event from "../Event";
@@ -12,14 +11,14 @@ export default function KidProfile({
 
   return (
       <StyledKidCard>
-        <Image
-          width={150}
-          height={150}
+        <StyledImage
+          width={250}
+          height={250}
           src={kidData.image}
           alt="Kid Photo"
         />
-        <h2>{kidData.name} </h2>
-        <h3>* {formatDate(kidData.birthDate)}</h3>  
+        <StyledName>{kidData.name}</StyledName>
+        <StyledBirthDate>🎂 {formatDate(kidData.birthDate)}</StyledBirthDate>  
       <StyledEventList>
         {kidData?.events?.map((event) => (
           <Event

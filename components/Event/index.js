@@ -1,6 +1,6 @@
 import { useState } from "react";
 import EventForm from "../EventForm";
-import { StyledListItem } from "./Event.styled";
+import { StyledListItem, StyledParagraph, StyledEditButton, StyledDeleteButton, StyledCancelButton } from "./Event.styled";
 import { formatDate } from "../../resources/dateUtils";
 
 export default function Event({ event, kidData, mutate }) {
@@ -51,8 +51,7 @@ export default function Event({ event, kidData, mutate }) {
   }}
   return (
     <StyledListItem>
-      <p>{event.title}</p>{" "}
-      <p>{formatDate(event.date)}</p>
+      <StyledParagraph><strong>{event.title}:</strong> {formatDate(event.date)}</StyledParagraph>
       <div>
         {isEditMode && (
           <EventForm
@@ -64,27 +63,27 @@ export default function Event({ event, kidData, mutate }) {
         )}
       </div>
       {!isEditMode ? (
-        <button
+        <StyledEditButton
           type="button"
           onClick={() => {
             setIsEditMode(!isEditMode);
           }}>
-          Bearbeiten
-          </button>
+          ✏️
+          </StyledEditButton>
       ) : null}
       {!isEditMode ? (
-        <button type="button" onClick={() => handleDeleteEvent(event)}
+        <StyledDeleteButton type="button" onClick={() => handleDeleteEvent(event)}
         >
-          Ereignis löschen
-        </button>
+          ❌
+        </StyledDeleteButton>
       ) : (
-        <button
+        <StyledCancelButton
           type="button"
           onClick={() => {
             setIsEditMode(!isEditMode);
           }}>
         Abbrechen
-        </button>
+        </StyledCancelButton>
       )}
     </StyledListItem>
   );

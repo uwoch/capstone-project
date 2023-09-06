@@ -1,4 +1,3 @@
-import { CldUploadButton } from "next-cloudinary";
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
@@ -6,65 +5,37 @@ export const StyledForm = styled.form`
   flex-flow: column wrap;
   align-content: center;
   align-items: center;
-  padding: 20px;
-`;
-
-export const StyledLabel = styled.label`
-  margin: 4px;
-  font-size: 1rem;
-`;
-
-export const StyledInput = styled.input`
-  border-radius: 2px;
-  border: 1px solid #000;
-  width: 230px;
-  height: 30px;
-  margin: 8px;
-`;
-
-export const StyledSaveButton = styled.button`
-  background-color: #f0f0f0;
-  font-size: 1rem;
-  color: #333;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  margin: 20px;
-  cursor: pointer;
-  &:hover {
-    background-color: orange;
-  }
-`;
-export const StyledGoBackButton = styled.button`
-  background-color: #f0f0f0;
-  font-size: 1rem;
-  color: #333;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  margin: 20px;
-  cursor: pointer;
-  &:hover {
-    background-color: #6ffffa;
-  }
-`;
-
-export const StyledCldUploadButton = styled(CldUploadButton)`
-  background-color: #f0f0f0;
-  font-size: 1rem;
-  color: #333;
-  border: none;
-  border-radius: 10px;
-  padding: 8px 16px;
-  margin: 20px;
-  cursor: pointer;
-  background-color: orange;
-  &:hover {
-    background-color: #f0f0f0;
-  }
+  padding: 0.5rem;
+  box-shadow: 0px 1px 5px -2px #7f8487;
+  border-radius: 0.5rem;
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
 `;
 export const StyledHeading = styled.h3`
   text-align: center;
-  color: black;
 `;
+
+export const StyledLabel = styled.label`
+  margin: 0.1rem;
+`;
+
+export const StyledInput = styled.input`
+  border-radius: 0.5rem;
+  border: 1px solid grey;
+  margin: 0.5rem;
+  height: 4vh;
+  width: 60vw;
+`;
+
+export const StyledSaveButton = styled.button`
+  background-color: #c1ffc1;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0.5rem 0.5rem 0.5rem;
+  cursor: pointer;
+`;
+
 

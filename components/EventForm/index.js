@@ -1,5 +1,5 @@
-import { StyledForm, StyledHeading, StyledLabel, StyledInput, StyledSaveButton, StyledCldUploadButton, StyledGoBackButton } from "./EventForm.styled";
-import StyledDatePicker from "./StyledDatePicker";
+import { StyledForm, StyledHeading, StyledLabel, StyledInput, StyledSaveButton } from "./EventForm.styled";
+import { StyledDatePicker } from "../DatePicker/DatePicker.styled";
 import { useState } from "react";
 
 
@@ -10,7 +10,7 @@ export default function EventForm({ onSubmit, title, isEditMode, date }) {
 
   return (
     <StyledForm onSubmit={onSubmit}>
-      <StyledHeading>{isEditMode ? "Ereignis bearbeiten:" : "Erstelle ein neues Ereignis"} </StyledHeading>
+      <StyledHeading>{isEditMode ? "Ereignis bearbeiten:" : "Erstelle ein neues Ereignis:"} </StyledHeading>
       <StyledLabel htmlFor="title">Ereignis</StyledLabel>
       <StyledInput
         type="text"

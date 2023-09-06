@@ -1,66 +1,54 @@
-import Link from "next/link";
 import styled from "styled-components";
+import Image from "next/image";
 
 export const StyledKidCard = styled.article`
   align-items: center;
   padding: 1.2rem;
   text-align: center;
-  transition: 0.5s;
   overflow-wrap: break-word;
-  margin-top: 8rem;
+  margin-top: 10rem;
   margin-bottom: 4rem;
-  img {
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-  }
-`;
-
-export const StyledGoBackButton = styled.button`
-  background-color: #f0f0f0;
-  font-size: 1rem;
-  color: #333;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  margin: 20px;
-  cursor: pointer;
-  &:hover {
-    background-color: #6ffffa;
-  }
-`;
-export const StyledEditButton = styled.button`
-  background-color: #f0f0f0;
-  font-size: 1rem;
-  color: #333;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  margin: 8px;
-  cursor: pointer;
-  &:hover {
-    background-color: #6ffffa;
-  }
-`;
-
-export const StyledBackLink = styled(Link)`
-  background-color: #f0f0f0;
-  font-size: 1rem;
-  color: #333;
-  text-decoration: none;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  margin: 8px;
-  cursor: pointer;
-  &:hover {
-    background-color: #6ffffa;
-  }
 `;
 
 export const StyledEventList = styled.ul`
   list-style-type: none;
   justify-items: center;
-  padding: 0px;
+  padding: 0rem;
   align-items: center;
+`;
+
+export const StyledName = styled.h2`    
+  text-align: center;
+`;
+
+export const StyledBirthDate = styled.h3`    
+  text-align: center;
+  margin-top: -1rem;
+`;
+
+export const StyledImage = styled(Image)`
+    width: 80%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: -0.8rem;
+
+    @media (min-width: 600px){
+        width: 60%;
+        height: auto;
+    }
+
+    @media (min-width: 900px){
+        width: 40%;
+        height: auto;
+    }
+
+    @media (min-width: 1200px){
+        width: 40%;
+        height: auto;
+    }
+    @media (min-width: 1536px){
+        width: 20%;
+        height: auto;
+    }
+
 `;

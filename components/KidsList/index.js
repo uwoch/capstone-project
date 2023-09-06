@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { StyledHeading, StyledList, StyledListContainer,
+import { StyledList, StyledListContainer,
     StyledListItem, StyledImage, StyledParagraph, StyledLink, StyledSection } from "./KidsList.styled";
 
 export default function KidsList() {
@@ -19,7 +19,7 @@ export default function KidsList() {
         {data.map((kid) => (
           <StyledLink href={`/${kid._id}`} key={kid._id}>
           <StyledListItem>
-          <StyledImage src={kid.image} alt={kid.name} width={500} height={500} /> 
+          <StyledImage src={kid.image} alt={kid.name} width={250} height={250} /> 
           <StyledParagraph>{kid.name}</StyledParagraph>
           </StyledListItem>
           </StyledLink>
