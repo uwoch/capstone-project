@@ -27,6 +27,28 @@ export const StyledBirthDate = styled.h3`
 `;
 
 export const StyledImage = styled(Image)`
+    width: 80%;
+    height: auto;
     border-radius: 0.5rem;
     margin-bottom: -0.8rem;
+
+    @media (min-width: 600px){
+        width: 60%;
+        height: auto;
+    }
+
+    @media (min-width: 900px){
+        width: 40%;
+        height: auto;
+    }
+
+    @media (min-width: 1200px){
+        width: 40%;
+        height: auto;
+    }
+    @media (min-width: 1536px){
+        width: 20%;
+        height: auto;
+    }
+
 `;

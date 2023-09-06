@@ -22,9 +22,19 @@ export const StyledListItem = styled.li`
 
 export const StyledImage = styled(Image)`
     width: 80%;
-    height: 80%;
+    height: auto;
     border-radius: 0.5rem;
     margin-bottom: -0.8rem;
+    
+    @media (min-width: 600px){
+        width: 90%;
+        height: auto;
+    }
+
+    @media (min-width: 900px){
+        width: 100%;
+        height: auto;
+    }
 `;
 
 export const StyledParagraph = styled.p`
