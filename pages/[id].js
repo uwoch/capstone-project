@@ -6,7 +6,7 @@ export default function KidDetails() {
   const router = useRouter();
   const { id } = router.query;
   const { data: kidData, isLoading, mutate} = useSWR(`/api/kids/${id}`);
-  
+ 
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -55,6 +55,7 @@ export default function KidDetails() {
     <KidProfile
        onSubmit={handleSubmit}
        kidData={kidData}
-       mutate={mutate} />
+       mutate={mutate}
+       />
   );
 }

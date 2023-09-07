@@ -19,7 +19,7 @@ export default function KidsList() {
         {data.map((kid) => (
           <StyledLink href={`/${kid._id}`} key={kid._id}>
           <StyledListItem>
-          <StyledImage src={kid.image} alt={kid.name} width={250} height={250} /> 
+         {/*  <StyledImage src={kid.image} alt={kid.name} width={250} height={250} />  */}
           <StyledParagraph>{kid.name}</StyledParagraph>
           </StyledListItem>
           </StyledLink>

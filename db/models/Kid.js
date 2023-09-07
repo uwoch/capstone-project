@@ -4,7 +4,7 @@ import "./Event";
 const { Schema } = mongoose;
 
 const kidSchema = new Schema({
-  image: { type: String, required: true },
+  image: { type: String, required: false },
   name: { type: String, required: true },
   birthDate: { type: Date, required: true },
   events: { type: [Schema.Types.ObjectId], ref: "Event"},

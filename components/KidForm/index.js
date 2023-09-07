@@ -1,22 +1,21 @@
-import { StyledForm, StyledHeading, StyledLabel, StyledInput, StyledSaveButton } from "./KidForm.styled";
+import { StyledForm, StyledLabel, StyledInput, StyledSaveButton, StyledHeading } from "./KidForm.styled";
 import { StyledDatePicker } from "../DatePicker/DatePicker.styled";
 import { useState } from "react";
 
-
-export default function KidForm({ onSubmit, name, isEditMode, birthDate }) {
+export default function KidForm({ onSubmit, isEditMode, name, birthDate }) {
     const today = new Date();
     const [startDate, setStartDate] = useState(new Date());
     
     return (
         <StyledForm onSubmit={onSubmit}>
-        <StyledHeading>{isEditMode ? "Infos bearbeiten" : "Ein Kind hinzufügen"}</StyledHeading>
+         <StyledHeading>{isEditMode ? "Infos bearbeiten:" : "Kind hinzufügen:"} </StyledHeading>
         <StyledLabel htmlFor="name">Name</StyledLabel>
           <StyledInput 
           type="text" 
           id="name" 
           name="name" 
-          defaultValue={name} 
           required
+          defaultValue={name}
           minLength={3}
           maxLength={50}
           pattern="\S+(\s\S+)*"
@@ -29,13 +28,13 @@ export default function KidForm({ onSubmit, name, isEditMode, birthDate }) {
             id="birthDate"
             name="birthDate"
             onChange={(date) => setStartDate(date)}
-            dateFormat="yyyy/MM/dd"
             selected={startDate}
             required
             maxDate={today}
             defaultValue={birthDate}
+            dateFormat="yyyy/MM/dd"
           />
-      <StyledSaveButton type="submit">Speichern</StyledSaveButton>
+      <StyledSaveButton type="submit">Kind hinzufügen</StyledSaveButton>
       </StyledForm>
     );
   }
