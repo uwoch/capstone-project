@@ -17,5 +17,10 @@ export default async function handler(request, response) {
   if (request.method === "PATCH") {
     await Kid.findByIdAndUpdate(id, request.body);
     response.status(200).json({ message: "Update is successful!" });
+
+  if (request.method === "DELETE") {
+      await Kid.findByIdAndDelete(id);
+  
+      response.status(200).json({ message: "Kid successfully deleted!" });
   }
-}
+}}

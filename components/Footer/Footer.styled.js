@@ -19,3 +19,8 @@ export const StyledFooter = styled.footer`
 export const StyledHomeLink = styled(Link)`
   text-decoration: none;
   `;
+  export const StyledAddChildLink = styled(Link)`
+  text-decoration: none;
+  `;
+
+  

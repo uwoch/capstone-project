@@ -36,7 +36,7 @@ export default function EventForm({ onSubmit, title, isEditMode, date }) {
             maxDate={today}
             defaultValue={date}
           />
-      <StyledSaveButton type="submit">Speichern</StyledSaveButton>
+      <StyledSaveButton type="submit">Log speichern</StyledSaveButton>
     </StyledForm>
   );
 }
