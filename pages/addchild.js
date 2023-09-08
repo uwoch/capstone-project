@@ -23,12 +23,12 @@ export default function AddChildPage() {
       if (res.status === 400) {
         console.error("Bad Request");
       } else if (res.status === 418) {
-        console.error("Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+        console.error("An unexpected error has occurred. Please try again");
       } else if (res.ok) {
         router.push("/");
       }
     } catch (error) {
-      console.error("Ein Fehler ist aufgetreten:", error);
+      console.error("An error has occurred:", error);
     } finally {
       setLoading(false);
     }
