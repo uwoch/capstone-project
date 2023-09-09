@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Image from 'next/image';
+import { CldUploadButton } from "next-cloudinary";
 
 export const StyledForm = styled.form`
   display: flex;
@@ -38,4 +40,19 @@ export const StyledSaveButton = styled.button`
   padding: 0.5rem 1rem;
   margin: 1rem 0.5rem 0.5rem 0.5rem;
   cursor: pointer;
+`;
+
+export const StyledCldUploadButton = styled(CldUploadButton)`
+  background-color: #f0f0f0;
+  font-size: 1rem;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  margin: 20px;
+  cursor: pointer;
+  background-color: orange;
+  &:hover {
+    background-color: #f0f0f0;
+  }
 `;

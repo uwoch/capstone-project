@@ -8,10 +8,14 @@ export default function KidsList() {
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
-  if (!data) {
-    return <h1>Where are the kids???</h1>;
-  }
 
+  if (!data || data.length === 0) {
+    return (
+      <>
+        <StyledSection>Du hast noch kein Kind angelegt, für das du loggen kannst. </StyledSection>
+      </>
+    );
+  }
   return (
     <><StyledSection>Für wen möchtest du loggen?</StyledSection>
       <StyledListContainer>
@@ -19,7 +23,14 @@ export default function KidsList() {
         {data.map((kid) => (
           <StyledLink href={`/${kid._id}`} key={kid._id}>
           <StyledListItem>
-         <StyledImage src={kid.image} alt={kid.name} width={250} height={250} />
+          {kid.imageId && (
+         <StyledImage 
+         src={`https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${kid.imageId}.png`} 
+         alt={kid.name} 
+        width="250"
+        height="250"
+          />
+         )}
           <StyledParagraph>{kid.name}</StyledParagraph>
           </StyledListItem>
           </StyledLink>

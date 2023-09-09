@@ -1,13 +1,38 @@
-import { StyledForm, StyledLabel, StyledInput, StyledSaveButton, StyledHeading } from "./KidForm.styled";
+import { StyledForm, StyledLabel, StyledInput, StyledSaveButton, StyledHeading, StyledCldUploadButton } from "./KidForm.styled";
 import { StyledDatePicker } from "../DatePicker/DatePicker.styled";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
-export default function KidForm({ onSubmit, isEditMode, name, birthDate }) {
+export default function KidForm({ isEditMode, name, birthDate }) {
     const today = new Date();
     const [startDate, setStartDate] = useState(new Date());
-    
+    const [imageId, setImageId] = useState(null);
+    const router = useRouter(); 
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const kidData = Object.fromEntries(formData);
+
+    const newKid = {
+      name: kidData.name,
+      birthDate: kidData.birthDate,
+      imageId: imageId,
+    };
+    const response = await fetch("/api/kids", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newKid),
+    });
+
+    if (response.ok) {
+      router.push("/");
+    }
+    }
     return (
-        <StyledForm onSubmit={onSubmit}>
+        <StyledForm onSubmit={handleSubmit}>
          <StyledHeading>{isEditMode ? "Infos bearbeiten:" : "Kind hinzufügen:"} </StyledHeading>
         <StyledLabel htmlFor="name">Name</StyledLabel>
           <StyledInput 
@@ -34,6 +59,10 @@ export default function KidForm({ onSubmit, isEditMode, name, birthDate }) {
             defaultValue={birthDate}
             dateFormat="yyyy/MM/dd"
           />
+          <StyledCldUploadButton 
+          uploadPreset="t4c2yyvk"
+          onUpload={({ info }) => setImageId(info.public_id)}
+          >Bild hochladen</StyledCldUploadButton> 
       <StyledSaveButton type="submit">Kind hinzufügen</StyledSaveButton>
       </StyledForm>
     );
