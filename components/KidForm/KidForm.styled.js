@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Image from 'next/image';
 import { CldUploadButton } from "next-cloudinary";
 
 export const StyledForm = styled.form`

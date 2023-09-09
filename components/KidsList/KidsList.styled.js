@@ -53,3 +53,18 @@ export const StyledSection = styled.p`
   margin-top: 10rem;
   font-weight: bold;
   `;
+
+export const StyledHeadline  = styled.h3`
+  text-align: center;
+  color: #016e82;
+  margin-top: 15rem;
+  max-width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  `;
+
+export const StyledAddChildLink = styled(Link)`
+  text-decoration: none;
+  align-items: center;
+  text-align: center;
+  `;
