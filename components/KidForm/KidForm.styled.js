@@ -36,22 +36,18 @@ export const StyledSaveButton = styled.button`
   font-size: 1rem;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem ;
   margin: 1rem 0.5rem 0.5rem 0.5rem;
+  margin-bottom: 1rem;
   cursor: pointer;
 `;
 
 export const StyledCldUploadButton = styled(CldUploadButton)`
-  background-color: #f0f0f0;
   font-size: 1rem;
-  color: #333;
   border: none;
-  border-radius: 10px;
-  padding: 8px 16px;
-  margin: 20px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem 0.5rem 0.5rem 0.5rem;
   cursor: pointer;
-  background-color: orange;
-  &:hover {
-    background-color: #f0f0f0;
-  }
+  background-color: #ffffff;
 `;

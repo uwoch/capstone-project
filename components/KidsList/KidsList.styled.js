@@ -57,7 +57,6 @@ export const StyledSection = styled.p`
 export const StyledHeadline  = styled.h3`
   text-align: center;
   color: #016e82;
-  margin-top: 15rem;
   max-width: 60%;
   margin-left: 20%;
   margin-right: 20%;
@@ -68,3 +67,18 @@ export const StyledAddChildLink = styled(Link)`
   align-items: center;
   text-align: center;
   `;
+
+export const StyledContainer = styled.section`
+display: flex;
+flex-flow: column wrap;
+align-content: center;
+align-items: center;
+padding: 0.5rem;
+box-shadow: 0px 1px 5px -2px #7f8487;
+border-radius: 0.5rem;
+max-width: 60%;
+margin-left: 20%;
+margin-right: 20%;
+margin-bottom: 10rem;
+margin-top: 15rem;
+`;
