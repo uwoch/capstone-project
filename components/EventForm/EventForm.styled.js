@@ -29,7 +29,7 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledSaveButton = styled.button`
-  background-color: #c1ffc1;
+  background-color: #ffffff;
   font-size: 1rem;
   border: none;
   border-radius: 0.5rem;

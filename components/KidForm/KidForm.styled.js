@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CldUploadButton } from "next-cloudinary";
+import Image from "next/image.js";
 
 export const StyledForm = styled.form`
   display: flex;
@@ -18,11 +19,9 @@ export const StyledForm = styled.form`
 export const StyledHeading = styled.h3`
   text-align: center;
 `;
-
 export const StyledLabel = styled.label`
   margin: 0.1rem;
 `;
-
 export const StyledInput = styled.input`
   border-radius: 0.5rem;
   border: 1px solid grey;
@@ -30,24 +29,27 @@ export const StyledInput = styled.input`
   height: 4vh;
   width: 60vw;
 `;
-
 export const StyledSaveButton = styled.button`
-  background-color: #c1ffc1;
+  background-color: #ffffff;
   font-size: 1rem;
   border: none;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem ;
-  margin: 1rem 0.5rem 0.5rem 0.5rem;
-  margin-bottom: 1rem;
+  margin: 1.5rem 0.5rem 1rem 0.5rem;
   cursor: pointer;
 `;
-
 export const StyledCldUploadButton = styled(CldUploadButton)`
   font-size: 1rem;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  margin: 0.2rem 0.5rem 0.5rem 0.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  margin: 1.2rem 0.5rem 1.5rem 0.5rem;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: #02aece;
+  color: #ffffff;
+`;
+export const StyledImage = styled(Image)`
+    border-radius: 0.5rem;
+    width: 30%;
+    height: auto;
 `;
