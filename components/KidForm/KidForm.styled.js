@@ -50,6 +50,6 @@ export const StyledCldUploadButton = styled(CldUploadButton)`
 `;
 export const StyledImage = styled(Image)`
     border-radius: 0.5rem;
-    width: 30%;
+    width: 20%;
     height: auto;
 `;
