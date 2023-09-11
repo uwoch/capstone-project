@@ -35,7 +35,7 @@ export const StyledSaveButton = styled.button`
   border: none;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem ;
-  margin: 1.5rem 0.5rem 1rem 0.5rem;
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
   cursor: pointer;
 `;
 export const StyledCldUploadButton = styled(CldUploadButton)`
@@ -43,13 +43,32 @@ export const StyledCldUploadButton = styled(CldUploadButton)`
   border: none;
   border-radius: 0.5rem;
   padding: 1rem 1.5rem 1rem 1.5rem;
-  margin: 1.2rem 0.5rem 1.5rem 0.5rem;
+  margin: 0.8rem 0.5rem 1.5rem 0.5rem;
   cursor: pointer;
   background-color: #02aece;
   color: #ffffff;
 `;
 export const StyledImage = styled(Image)`
     border-radius: 0.5rem;
-    width: 20%;
+    width: 40%;
     height: auto;
+
+    @media (min-width: 600px){
+        width: 40%;
+        height: auto;
+    }
+
+    @media (min-width: 900px){
+        width: 40%;
+        height: auto;
+    }
+
+    @media (min-width: 1200px){
+        width: 40%;
+        height: auto;
+    }
+    @media (min-width: 1536px){
+        width: 20%;
+        height: auto;
+    }
 `;

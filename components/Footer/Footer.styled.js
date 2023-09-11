@@ -16,10 +16,7 @@ export const StyledFooter = styled.footer`
   border-radius: 1em 1em 0em 0em;
 `;
 
-export const StyledHomeLink = styled(Link)`
-  text-decoration: none;
-  `;
-  export const StyledAddChildLink = styled(Link)`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   `;
 

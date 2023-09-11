@@ -47,14 +47,14 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   `;
 
-export const StyledSection = styled.p`
+export const StyledHeadline = styled.h2`
   text-align: center;
   color: black;
   margin-top: 10rem;
   font-weight: bold;
   `;
 
-export const StyledHeadline  = styled.h3`
+export const StyledSubHead  = styled.h3`
   text-align: center;
   color: #016e82;
   max-width: 60%;
@@ -80,5 +80,5 @@ max-width: 60%;
 margin-left: 20%;
 margin-right: 20%;
 margin-bottom: 10rem;
-margin-top: 15rem;
+margin-top: 13rem;
 `;
