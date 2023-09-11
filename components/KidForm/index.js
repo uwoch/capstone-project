@@ -8,7 +8,7 @@ export default function KidForm({ isEditMode, name, birthDate }) {
     const [startDate, setStartDate] = useState(new Date());
     const [imageId, setImageId] = useState(null);
     const router = useRouter(); 
-    const placeholderImage = "/profile.png";
+    const placeholderImage = "/avatar.png";
 
     async function handleSubmit(event) {
       event.preventDefault();
@@ -68,15 +68,15 @@ export default function KidForm({ isEditMode, name, birthDate }) {
         <StyledImage
           src={`https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${imageId}.png`}
           alt="Bildvorschau"
-          width="50"
-          height="50"
+          width="250"
+          height="250"
         />
       ) : (
         <StyledImage
           src={placeholderImage}
           alt="Platzhalterbild"
-          width="50"
-          height="50"
+          width="250"
+          height="250"
         />
       )}
       <StyledSaveButton type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#016e82" viewBox="0 0 16 16">
