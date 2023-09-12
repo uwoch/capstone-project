@@ -56,9 +56,9 @@ export const StyledHeadline = styled.h2`
 export const StyledSubHead  = styled.p`
   text-align: center;
   color: #016e82;
-  max-width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
   font-weight: bold;
   `;
 
@@ -90,6 +90,13 @@ export const StyledStartImage = styled(Image)`
     border-radius: 0.5rem;
     padding-top: 1rem;
 
-    
+    @media (min-width: 1200px){
+        width: 80%;
+        height: auto;
+    }
+    @media (min-width: 1536px){
+        width: 80%;
+        height: auto;
+    }
   
 `;

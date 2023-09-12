@@ -14,9 +14,9 @@ export default function KidsList() {
       <StyledContainer>
       <StyledStartImage 
          src="/rocket.jpg"
-         alt="Rakete beim Start"
-        width="250"
-        height="250"
+         alt="Rocket in the sky"
+        width="1920"
+        height="1200"
           />
         <StyledSubHead>Du hast noch kein Kind angelegt, für das du loggen kannst. Füge hier ein Kind hinzu:</StyledSubHead>
         <StyledAddChildLink href="/addchild">
