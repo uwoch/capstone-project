@@ -7,6 +7,8 @@ export const StyledDatePicker = styled(DatePicker)`
     width: 60vw;
     margin: 0.5rem;
     border-radius: 0.5rem;
-    border: 1px solid grey;
+    border: 1px solid #808080;
+    color: #016e82;
+    z-index: 0;
 `;
 

@@ -11,6 +11,7 @@ export const StyledHeader = styled.header`
   width: 100%;
   height: 8rem;
   border-radius: 0rem 0rem 1rem 1rem;
+  z-index: 1;
 `;
 
 export const StyledHomeLink = styled(Link)`

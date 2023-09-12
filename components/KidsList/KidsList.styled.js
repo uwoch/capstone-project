@@ -43,13 +43,12 @@ export const StyledParagraph = styled.p`
   `;
 
 export const StyledLink = styled(Link)`
-  color: black;
+  color: #016e82;
   text-decoration: none;
   `;
 
 export const StyledHeadline = styled.h2`
   text-align: center;
-  color: black;
   margin-top: 10rem;
   font-weight: bold;
   `;

@@ -12,5 +12,6 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: ${openSans.style.fontFamily};
+    color: #016e82;
   }
 `;

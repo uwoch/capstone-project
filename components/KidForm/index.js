@@ -8,7 +8,7 @@ export default function KidForm({ isEditMode, name, birthDate }) {
     const [startDate, setStartDate] = useState(new Date());
     const [imageId, setImageId] = useState(null);
     const router = useRouter(); 
-    const placeholderImage = "/avatar.png";
+    const placeholderImage = "https://res.cloudinary.com/dyb6xyd09/image/upload/v1694427313/profile/avatar_ehhqjy.png";
 
     async function handleSubmit(event) {
       event.preventDefault();
@@ -18,7 +18,7 @@ export default function KidForm({ isEditMode, name, birthDate }) {
     const newKid = {
       name: kidData.name,
       birthDate: kidData.birthDate,
-      imageId: imageId,
+      imageId: imageId || placeholderImage,
     };
     const response = await fetch("/api/kids", {
       method: "POST",
@@ -34,7 +34,7 @@ export default function KidForm({ isEditMode, name, birthDate }) {
     }
     return (
         <StyledForm onSubmit={handleSubmit}>
-         <StyledHeading>{isEditMode ? "Infos bearbeiten" : "Neues Kind anlegen:"} </StyledHeading>
+         <StyledHeading>{isEditMode ? "Infos bearbeiten" : "Infos zu deinem Kind"} </StyledHeading>
         <StyledLabel htmlFor="name">Name</StyledLabel>
           <StyledInput 
           type="text" 
@@ -63,7 +63,10 @@ export default function KidForm({ isEditMode, name, birthDate }) {
           <StyledCldUploadButton  
           uploadPreset="t4c2yyvk"
           onUpload={({ info }) => setImageId(info.public_id)}
-          >Profilbild hochladen</StyledCldUploadButton> 
+          ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+          <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+          <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+          </svg> Profilbild hinzufügen</StyledCldUploadButton> 
         {imageId ? (
         <StyledImage
           src={`https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${imageId}.png`}
