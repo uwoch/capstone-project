@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { StyledList, StyledListContainer,
-    StyledListItem, StyledImage, StyledParagraph, StyledLink, StyledSection, StyledHeadline, StyledSubHead, StyledAddChildLink, StyledContainer } from "./KidsList.styled";
+    StyledListItem, StyledImage, StyledParagraph, StyledLink, StyledSection, StyledHeadline, StyledSubHead, StyledAddChildLink, StyledContainer, StyledStartImage } from "./KidsList.styled";
 
 export default function KidsList() {
   const { data, isLoading } = useSWR("/api/kids");
@@ -12,6 +12,12 @@ export default function KidsList() {
   if (!data || data.length === 0) {
     return (
       <StyledContainer>
+      <StyledStartImage 
+         src="/rocket.jpg"
+         alt="Rakete beim Start"
+        width="250"
+        height="250"
+          />
         <StyledSubHead>Du hast noch kein Kind angelegt, für das du loggen kannst. Füge hier ein Kind hinzu:</StyledSubHead>
         <StyledAddChildLink href="/addchild">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#016e82" viewBox="0 0 16 16">
@@ -34,8 +40,8 @@ export default function KidsList() {
          <StyledImage 
          src={kid.imageId === "/avatar.png" ? "/avatar.png" : `https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${kid.imageId}.png`}
          alt={kid.name} 
-        width="250"
-        height="250"
+        width="640"
+        height="400"
           />
          )}
           <StyledParagraph>{kid.name}</StyledParagraph>

@@ -43,7 +43,7 @@ export const StyledCldUploadButton = styled(CldUploadButton)`
   font-size: 1rem;
   border: none;
   border-radius: 0.5rem;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   margin: 0.8rem 0.5rem 1.5rem 0.5rem;
   cursor: pointer;
   background-color: #02aece;

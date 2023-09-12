@@ -53,18 +53,20 @@ export const StyledHeadline = styled.h2`
   font-weight: bold;
   `;
 
-export const StyledSubHead  = styled.h3`
+export const StyledSubHead  = styled.p`
   text-align: center;
   color: #016e82;
   max-width: 60%;
   margin-left: 20%;
   margin-right: 20%;
+  font-weight: bold;
   `;
 
 export const StyledAddChildLink = styled(Link)`
   text-decoration: none;
   align-items: center;
   text-align: center;
+  margin-bottom: 1rem;
   `;
 
 export const StyledContainer = styled.section`
@@ -75,9 +77,19 @@ align-items: center;
 padding: 0.5rem;
 box-shadow: 0px 1px 5px -2px #7f8487;
 border-radius: 0.5rem;
-max-width: 60%;
-margin-left: 20%;
-margin-right: 20%;
-margin-bottom: 10rem;
-margin-top: 13rem;
+max-width: 80%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 5rem;
+margin-top: 10rem;
+`;
+
+export const StyledStartImage = styled(Image)`
+    width: 90%;
+    height: auto;
+    border-radius: 0.5rem;
+    padding-top: 1rem;
+
+    
+  
 `;
