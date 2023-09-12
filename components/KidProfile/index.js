@@ -13,7 +13,7 @@ export default function KidProfile({
       <StyledKidCard>
          {kidData.imageId && (
          <StyledImage 
-         src={`https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${kidData.imageId}.png`} 
+         src={kidData.imageId === "/avatar.png" ? "/avatar.png" : `https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${kidData.imageId}.png`}
          alt={kidData.name}
          width="250"
          height="250"

@@ -32,7 +32,7 @@ export default function KidsList() {
           <StyledListItem>
           {kid.imageId && (
          <StyledImage 
-         src={`https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${kid.imageId}.png`} 
+         src={kid.imageId === "/avatar.png" ? "/avatar.png" : `https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${kid.imageId}.png`}
          alt={kid.name} 
         width="250"
         height="250"
