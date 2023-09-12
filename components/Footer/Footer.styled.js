@@ -18,6 +18,6 @@ export const StyledFooter = styled.footer`
 
 export const StyledLink = styled(Link)`
  textdecoration: none;
- color: ${(props) => (props.$active ? "#cccccc" : "#016e82")};
+ color: ${(props) => (props.$active ? "#f39f18" : "#016e82")};
 `;
  
