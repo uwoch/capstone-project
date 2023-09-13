@@ -11,12 +11,14 @@ export default function KidProfile({
 
   return (
       <StyledKidCard>
-        <StyledImage
-          width={250}
-          height={250}
-          src={kidData.image}
-          alt="Kid Photo"
-        />
+         {kidData.imageId && (
+         <StyledImage 
+         src={kidData.imageId === "/avatar.png" ? "/avatar.png" : `https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${kidData.imageId}.png`}
+         alt={kidData.name}
+         width="250"
+         height="250"
+          />
+         )}
         <StyledName>{kidData.name}</StyledName>
         <StyledBirthDate>🎂 {formatDate(kidData.birthDate)}</StyledBirthDate>  
       <StyledEventList>

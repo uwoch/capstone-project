@@ -22,14 +22,15 @@ export const StyledLabel = styled.label`
 
 export const StyledInput = styled.input`
   border-radius: 0.5rem;
-  border: 1px solid grey;
+  border: 1px solid #808080;
   margin: 0.5rem;
   height: 4vh;
   width: 60vw;
+  color: #016e82;
 `;
 
 export const StyledSaveButton = styled.button`
-  background-color: #c1ffc1;
+  background-color: #ffffff;
   font-size: 1rem;
   border: none;
   border-radius: 0.5rem;

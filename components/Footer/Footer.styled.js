@@ -16,11 +16,8 @@ export const StyledFooter = styled.footer`
   border-radius: 1em 1em 0em 0em;
 `;
 
-export const StyledHomeLink = styled(Link)`
-  text-decoration: none;
-  `;
-  export const StyledAddChildLink = styled(Link)`
-  text-decoration: none;
-  `;
-
-  
+export const StyledLink = styled(Link)`
+ textdecoration: none;
+ color: ${(props) => (props.$active ? "#f39f18" : "#016e82")};
+`;
+ 
