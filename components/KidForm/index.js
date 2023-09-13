@@ -59,6 +59,7 @@ export default function KidForm({ isEditMode, name, birthDate }) {
             maxDate={today}
             defaultValue={birthDate}
             dateFormat="yyyy/MM/dd"
+            showYearDropdown
           />
           <StyledCldUploadButton  
           uploadPreset="t4c2yyvk"
