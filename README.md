@@ -7,9 +7,7 @@ The Kids-Log app makes it easy to record all of the children's milestones. Wheth
 ## I used the following technologies: 
 - React
 - Next.js
+- Cloudinary
 - Styled Components
 - Git
 - npm
-- Jest
-- React Testing Library
-- Cloudinary
