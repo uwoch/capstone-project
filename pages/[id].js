@@ -53,9 +53,8 @@ export default function KidDetails() {
 
   return (
     <KidProfile
-       onSubmit={handleSubmit}
-       kidData={kidData}
-       mutate={mutate}
-       />
+      onSubmit={handleSubmit}
+      kidData={kidData}
+      mutate={mutate} />
   );
 }

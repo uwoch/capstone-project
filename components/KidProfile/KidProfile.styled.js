@@ -52,3 +52,5 @@ export const StyledImage = styled(Image)`
     }
 
 `;
+export const StyledKidDetails = styled.section`
+`;

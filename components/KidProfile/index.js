@@ -1,7 +1,9 @@
-import { StyledKidCard, StyledEventList, StyledName, StyledBirthDate, StyledImage } from "./KidProfile.styled";
+import { StyledKidCard, StyledEventList, StyledName, StyledBirthDate, StyledImage, StyledKidDetails } from "./KidProfile.styled";
 import { formatDate } from "../../resources/dateUtils";
 import EventForm from "../EventForm";
 import Event from "../Event";
+import Kid from "../Kid";
+import KidForm from "../KidForm";
 
 export default function KidProfile({
   kidData, 
@@ -19,8 +21,13 @@ export default function KidProfile({
          height="250"
           />
          )}
-        <StyledName>{kidData.name}</StyledName>
-        <StyledBirthDate>🎂 {formatDate(kidData.birthDate)}</StyledBirthDate>  
+         <StyledKidDetails>
+          <StyledName>{kidData.name}</StyledName>
+        <StyledBirthDate>🎂 {formatDate(kidData.birthDate)}</StyledBirthDate> 
+        <Kid key={kidData._id} 
+          kidData={kidData} 
+          mutate={mutate}/>  
+        </StyledKidDetails>
       <StyledEventList>
         {kidData?.events?.map((event) => (
           <Event

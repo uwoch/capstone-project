@@ -10,7 +10,7 @@ export default function EventForm({ onSubmit, title, isEditMode, date }) {
 
   return (
     <StyledForm onSubmit={onSubmit}>
-      <StyledHeading>{isEditMode ? "Log bearbeiten:" : "Was möchtest du loggen?"} </StyledHeading>
+      <StyledHeading>{isEditMode ? "Log bearbeiten:" : "Was möchtest du festhalten?"} </StyledHeading>
       <StyledLabel htmlFor="title">Ereignis</StyledLabel>
       <StyledInput
         type="text"
