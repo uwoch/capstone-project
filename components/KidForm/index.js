@@ -3,7 +3,7 @@ import { StyledDatePicker } from "../DatePicker/DatePicker.styled";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-export default function KidForm({ isEditMode, name, birthDate }) {
+export default function KidForm({ isEditMode, kidData }) {
     const today = new Date();
     const [startDate, setStartDate] = useState(new Date());
     const [imageId, setImageId] = useState(null);
@@ -34,14 +34,14 @@ export default function KidForm({ isEditMode, name, birthDate }) {
     }
     return (
         <StyledForm onSubmit={handleSubmit}>
-         <StyledHeading>{isEditMode ? "Infos bearbeiten" : "Infos zu deinem Kind"} </StyledHeading>
+         <StyledHeading>{isEditMode ? "Kindinfos bearbeiten" : "Infos zu deinem Kind"} </StyledHeading>
         <StyledLabel htmlFor="name">Name</StyledLabel>
           <StyledInput 
           type="text" 
           id="name" 
           name="name" 
           required
-          defaultValue={name}
+          defaultValue={kidData.name}
           minLength={3}
           maxLength={50}
           pattern="\S+(\s\S+)*"
@@ -57,7 +57,7 @@ export default function KidForm({ isEditMode, name, birthDate }) {
             selected={startDate}
             required
             maxDate={today}
-            defaultValue={birthDate}
+            defaultValue={kidData.birthDate}
             dateFormat="yyyy/MM/dd"
             showYearDropdown
           />
@@ -75,7 +75,7 @@ export default function KidForm({ isEditMode, name, birthDate }) {
           alt={imageId ? "Bildvorschau" : "Platzhalterbild"}
           width="250"
           height="250"
-          imageId={imageId}
+          imageId={kidData.imageId}
         />
       <StyledSaveButton type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#016e82" viewBox="0 0 16 16">
           <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>

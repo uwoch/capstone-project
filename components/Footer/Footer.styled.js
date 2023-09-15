@@ -7,13 +7,13 @@ export const StyledFooter = styled.footer`
   right: 0;
   height: 4rem;
   text-align: center;
-  background-color: #f0f0f0;
+  border-top: 1px #f0f0f0 solid;
+  background-color: #ffffff;
   z-index: 1;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   position: fixed;
-  border-radius: 1em 1em 0em 0em;
 `;
 
 export const StyledLink = styled(Link)`
