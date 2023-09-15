@@ -3,7 +3,7 @@ import { StyledDatePicker } from "../DatePicker/DatePicker.styled";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-export default function KidForm({ isEditMode, kidData }) {
+export default function KidForm({ isEditMode, name, birthDate }) {
     const today = new Date();
     const [startDate, setStartDate] = useState(new Date());
     const [imageId, setImageId] = useState(null);
@@ -41,7 +41,7 @@ export default function KidForm({ isEditMode, kidData }) {
           id="name" 
           name="name" 
           required
-          defaultValue={kidData.name}
+          defaultValue={name}
           minLength={3}
           maxLength={50}
           pattern="\S+(\s\S+)*"
@@ -57,7 +57,7 @@ export default function KidForm({ isEditMode, kidData }) {
             selected={startDate}
             required
             maxDate={today}
-            defaultValue={kidData.birthDate}
+            defaultValue={birthDate}
             dateFormat="yyyy/MM/dd"
             showYearDropdown
           />

@@ -70,7 +70,9 @@ export default function Kid() {
         {isEditMode && (
             <KidForm
               onSubmit={handleEditKid}
-              kidData={kidData}
+              name={kidData.name}
+              birthDate={kidData.birthDate}
+              imageId={kidData.imageId}
               isEditMode={true}
             />)}
            {isEditMode && (
