@@ -15,14 +15,14 @@ export default function Kid() {
   async function handleEditKid(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const updatedKidData = Object.fromEntries(formData);
+    const kidData = Object.fromEntries(formData);
 
     const response = await fetch(`/api/kids/${kidData?._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updatedKidData),
+      body: JSON.stringify(kidData),
     });
     if (response.ok) {
       mutate();
