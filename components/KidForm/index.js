@@ -9,6 +9,7 @@ export default function KidForm({ isEditMode, name, birthDate }) {
     const [imageId, setImageId] = useState(null);
     const router = useRouter(); 
     const placeholderImage = "/avatar.png";
+    const [selectedDate, setSelectedDate] = useState(new Date(birthDate));
 
     async function handleSubmit(event) {
       event.preventDefault();
@@ -54,7 +55,7 @@ export default function KidForm({ isEditMode, name, birthDate }) {
             id="birthDate"
             name="birthDate"
             onChange={(date) => setStartDate(date)}
-            selected={startDate}
+            selected={selectedDate}
             required
             maxDate={today}
             defaultValue={birthDate}

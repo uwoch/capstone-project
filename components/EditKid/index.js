@@ -10,7 +10,6 @@ export default function EditKid() {
   const { data: kidData, isLoading, mutate } = useSWR(`/api/kids/${id}`);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
- 
   
   async function handleEditKid(e) {
     e.preventDefault();
