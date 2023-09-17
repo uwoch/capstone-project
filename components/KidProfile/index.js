@@ -1,9 +1,8 @@
 import { StyledKidCard, StyledEventList, StyledName, StyledBirthDate, StyledImage, StyledKidDetails } from "./KidProfile.styled";
 import { formatDate } from "../../resources/dateUtils";
 import EventForm from "../EventForm";
-import Event from "../Event";
-import Kid from "../Kid";
-import KidForm from "../KidForm";
+import Event from "../EditEvent";
+import EditKid from "../EditKid";
 
 export default function KidProfile({
   kidData, 
@@ -24,7 +23,7 @@ export default function KidProfile({
          <StyledKidDetails>
           <StyledName>{kidData.name}</StyledName>
         <StyledBirthDate>🎂 {formatDate(kidData.birthDate)}</StyledBirthDate> 
-        <Kid key={kidData._id} 
+        <EditKid key={kidData._id} 
           kidData={kidData} 
           mutate={mutate}/>  
         </StyledKidDetails>

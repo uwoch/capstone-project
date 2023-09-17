@@ -1,10 +1,10 @@
 import { useState } from "react";
 import KidForm from "../KidForm";
-import { StyledSection, StyledEditButton, StyledDeleteButton, StyledCancelButton } from "./Kid.styled";
+import { StyledSection, StyledEditButton, StyledDeleteButton, StyledCancelButton } from "./EditKid.styled";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
-export default function Kid() {
+export default function EditKid() {
   const router = useRouter();
   const { id } = router.query;
   const { data: kidData, isLoading, mutate } = useSWR(`/api/kids/${id}`);
