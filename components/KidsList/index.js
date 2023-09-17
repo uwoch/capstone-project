@@ -1,7 +1,8 @@
 import useSWR from "swr";
 import { StyledList, StyledListContainer,
-    StyledListItem, StyledImage, StyledParagraph, StyledLink, StyledSection, StyledHeadline, StyledSubHead, StyledAddChildLink, StyledContainer, StyledStartImage } from "./KidsList.styled";
-
+    StyledListItem, StyledImage, StyledParagraph, StyledLink, StyledSection, AnimationContainer, StyledHeadline, StyledSubHead, StyledAddChildLink, StyledContainer, StyledStartImage } from "./KidsList.styled";
+import Lottie from "lottie-react";
+import rocket from "../../public/rocket.json"
 
 export default function KidsList() {
   const { data, isLoading } = useSWR("/api/kids");
@@ -13,12 +14,15 @@ export default function KidsList() {
   if (!data || data.length === 0) {
     return (
       <StyledContainer>
-      <StyledStartImage 
+      <AnimationContainer>
+      <Lottie animationData={rocket} loop={true} />
+      </AnimationContainer>
+ {/*      <StyledStartImage 
          src="/rocket.jpg"
          alt="Rocket in the sky"
         width="1920"
         height="1200"
-          />
+          /> */}
         <StyledSubHead>Kein Kind für das du loggen kannst!?</StyledSubHead>
         <StyledAddChildLink href="/addchild">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#016e82" viewBox="0 0 16 16">

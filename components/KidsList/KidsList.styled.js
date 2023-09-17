@@ -98,5 +98,9 @@ export const StyledStartImage = styled(Image)`
         width: 80%;
         height: auto;
     }
-  
 `;
+export const AnimationContainer = styled.article`
+  width: 50%;
+  height: auto;
+`;
+
