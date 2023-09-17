@@ -5,14 +5,12 @@ import { useRouter } from "next/router";
 
 export default function KidForm({ isEditMode, name, birthDate }) {
     const today = new Date();
-    const [startDate, setStartDate] = useState(new Date());
     const [imageId, setImageId] = useState(null);
     const router = useRouter(); 
     const placeholderImage = "/avatar.png";
     const [selectedDate, setSelectedDate] = useState(
       birthDate ? new Date(birthDate) : new Date()
     );
-    const [imagePath, setImagePath] = useState(imageId || placeholderImage);
 
     async function handleSubmit(event) {
       event.preventDefault();

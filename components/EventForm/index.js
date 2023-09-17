@@ -4,9 +4,7 @@ import { useState } from "react";
 
 
 export default function EventForm({ onSubmit, title, isEditMode, date }) {
-  
   const today = new Date();
-  const [startDate, setStartDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(
     date ? new Date(date) : new Date()
   );
