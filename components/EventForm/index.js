@@ -7,6 +7,9 @@ export default function EventForm({ onSubmit, title, isEditMode, date }) {
   
   const today = new Date();
   const [startDate, setStartDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(
+    date ? new Date(date) : new Date()
+  );
 
   return (
     <StyledForm onSubmit={onSubmit}>
@@ -29,9 +32,9 @@ export default function EventForm({ onSubmit, title, isEditMode, date }) {
             type="date"
             id="date"
             name="date"
-            onChange={(date) => setStartDate(date)}
+            onChange={(date) => setSelectedDate(date)}
+            selected={selectedDate}
             dateFormat="yyyy/MM/dd"
-            selected={startDate}
             required
             maxDate={today}
             defaultValue={date}
