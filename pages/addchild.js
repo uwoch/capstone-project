@@ -1,10 +1,10 @@
 import KidForm from "@/components/KidForm";
 import { useRouter } from "next/router";
 
-export default function AddChildPage(newKid) {
+export default function AddChildPage() {
   const router = useRouter();
 
-  async function handleAddChild() {
+  async function handleAddChild(newKid) {
     const response = await fetch("/api/kids", {
       method: "POST",
       headers: {

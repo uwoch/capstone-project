@@ -1,7 +1,6 @@
 import { StyledForm, StyledLabel, StyledInput, StyledSaveButton, StyledHeading, StyledCldUploadButton, StyledImage } from "./KidForm.styled";
 import { StyledDatePicker } from "../DatePicker/DatePicker.styled";
 import { useState } from "react";
-import { useRouter } from "next/router";
 
 export default function KidForm({ isEditMode, name, birthDate, image_id, onSubmit }) {
     const today = new Date();
