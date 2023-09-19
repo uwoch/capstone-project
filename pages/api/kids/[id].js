@@ -14,7 +14,7 @@ export default async function handler(request, response) {
 
     response.status(200).json(kid);
   }
-  if (request.method === "PATCH") {
+  if (request.method === "PUT") {
     const kidData = request.body;
     await Kid.findByIdAndUpdate(id, kidData);
     response.status(200).json({ message: "Update is successful!" });

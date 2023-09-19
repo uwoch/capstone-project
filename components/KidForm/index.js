@@ -3,10 +3,9 @@ import { StyledDatePicker } from "../DatePicker/DatePicker.styled";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-export default function KidForm({ isEditMode, name, birthDate }) {
+export default function KidForm({ isEditMode, name, birthDate, image_id, onSubmit }) {
     const today = new Date();
-    const [imageId, setImageId] = useState(null);
-    const router = useRouter(); 
+    const [imageId, setImageId] = useState(image_id || null);
     const placeholderImage = "/avatar.png";
     const [selectedDate, setSelectedDate] = useState(
       birthDate ? new Date(birthDate) : new Date()
@@ -22,21 +21,13 @@ export default function KidForm({ isEditMode, name, birthDate }) {
       birthDate: kidData.birthDate,
       imageId: imageId || placeholderImage,
     };
-    const response = await fetch("/api/kids", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newKid),
-    });
-
-    if (response.ok) {
-      router.push("/");
-    }
+ 
+onSubmit(newKid);
+  
     }
     return (
         <StyledForm onSubmit={handleSubmit}>
-         <StyledHeading>{isEditMode ? "Kindinfos bearbeiten" : "Infos zu deinem Kind"} </StyledHeading>
+         <StyledHeading>{isEditMode ? "Kindinfos bearbeiten" : "Infos deines Kindes"} </StyledHeading>
         <StyledLabel htmlFor="name">Name</StyledLabel>
           <StyledInput 
           type="text" 

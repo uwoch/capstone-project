@@ -11,17 +11,13 @@ export default function EditKid() {
   const [isEditMode, setIsEditMode] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   
-  async function handleEditKid(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const kidData = Object.fromEntries(formData);
-
+  async function handleEditKid(editedKid) {
     const response = await fetch(`/api/kids/${kidData?._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(kidData),
+      body: JSON.stringify(editedKid),
     });
     if (response.ok) {
       mutate();
@@ -71,7 +67,7 @@ export default function EditKid() {
               onSubmit={handleEditKid}
               name={kidData.name}
               birthDate={kidData.birthDate}
-              imageId={kidData.imageId}
+              image_id={kidData.imageId}
               isEditMode={true}
             />)}
            {isEditMode && (

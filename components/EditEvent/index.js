@@ -34,7 +34,7 @@ export default function EditEvent({ event, kidData, mutate }) {
     
     if (responseEvent.ok) {
       const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
-        method: "PATCH",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },

@@ -26,7 +26,7 @@ export default function KidDetails() {
 
       if (kidData) {
       const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
-        method: "PATCH",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
