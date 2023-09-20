@@ -26,7 +26,7 @@ export default function KidDetails() {
 
       if (kidData) {
       const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
-        method: "PATCH",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
@@ -53,9 +53,8 @@ export default function KidDetails() {
 
   return (
     <KidProfile
-       onSubmit={handleSubmit}
-       kidData={kidData}
-       mutate={mutate}
-       />
+      onSubmit={handleSubmit}
+      kidData={kidData}
+      mutate={mutate} />
   );
 }

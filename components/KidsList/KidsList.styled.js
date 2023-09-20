@@ -21,18 +21,18 @@ export const StyledListItem = styled.li`
 `;
 
 export const StyledImage = styled(Image)`
-    width: 80%;
+    width: 60%;
     height: auto;
     border-radius: 0.5rem;
     margin-bottom: -0.8rem;
-    
+
     @media (min-width: 600px){
-        width: 90%;
+        width: 60%;
         height: auto;
     }
 
-    @media (min-width: 900px){
-        width: 100%;
+    @media (min-width: 1200px){
+        width: 40%;
         height: auto;
     }
 `;
@@ -84,19 +84,8 @@ margin-bottom: 5rem;
 margin-top: 10rem;
 `;
 
-export const StyledStartImage = styled(Image)`
-    width: 90%;
-    height: auto;
-    border-radius: 0.5rem;
-    padding-top: 1rem;
-
-    @media (min-width: 1200px){
-        width: 80%;
-        height: auto;
-    }
-    @media (min-width: 1536px){
-        width: 80%;
-        height: auto;
-    }
-  
+export const AnimationContainer = styled.article`
+  width: 50%;
+  height: auto;
 `;
+

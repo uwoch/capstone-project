@@ -4,13 +4,14 @@ import { useState } from "react";
 
 
 export default function EventForm({ onSubmit, title, isEditMode, date }) {
-  
   const today = new Date();
-  const [startDate, setStartDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(
+    date ? new Date(date) : new Date()
+  );
 
   return (
-    <StyledForm onSubmit={onSubmit}>
-      <StyledHeading>{isEditMode ? "Log bearbeiten:" : "Was möchtest du loggen?"} </StyledHeading>
+    <StyledForm onSubmit={onSubmit} data-testid="event-form">
+      <StyledHeading>{isEditMode ? "Log bearbeiten:" : "Was möchtest du festhalten?"} </StyledHeading>
       <StyledLabel htmlFor="title">Ereignis</StyledLabel>
       <StyledInput
         type="text"
@@ -29,12 +30,13 @@ export default function EventForm({ onSubmit, title, isEditMode, date }) {
             type="date"
             id="date"
             name="date"
-            onChange={(date) => setStartDate(date)}
+            onChange={(date) => setSelectedDate(date)}
+            selected={selectedDate}
             dateFormat="yyyy/MM/dd"
-            selected={startDate}
             required
             maxDate={today}
             defaultValue={date}
+            showYearDropdown
           />
       <StyledSaveButton type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#016e82" viewBox="0 0 16 16">
           <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>

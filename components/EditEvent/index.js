@@ -1,9 +1,9 @@
 import { useState } from "react";
 import EventForm from "../EventForm";
-import { StyledListItem, StyledParagraph, StyledEditButton, StyledDeleteButton, StyledCancelButton } from "./Event.styled";
+import { StyledListItem, StyledParagraph, StyledEditButton, StyledDeleteButton, StyledCancelButton } from "./EditEvent.styled";
 import { formatDate } from "../../resources/dateUtils";
 
-export default function Event({ event, kidData, mutate }) {
+export default function EditEvent({ event, kidData, mutate }) {
 
   const [isEditMode, setIsEditMode] = useState(false);
 
@@ -34,7 +34,7 @@ export default function Event({ event, kidData, mutate }) {
     
     if (responseEvent.ok) {
       const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
-        method: "PATCH",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },

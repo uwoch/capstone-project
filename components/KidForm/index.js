@@ -1,14 +1,14 @@
 import { StyledForm, StyledLabel, StyledInput, StyledSaveButton, StyledHeading, StyledCldUploadButton, StyledImage } from "./KidForm.styled";
 import { StyledDatePicker } from "../DatePicker/DatePicker.styled";
 import { useState } from "react";
-import { useRouter } from "next/router";
 
-export default function KidForm({ isEditMode, name, birthDate }) {
+export default function KidForm({ isEditMode, name, birthDate, image_id, onSubmit }) {
     const today = new Date();
-    const [startDate, setStartDate] = useState(new Date());
-    const [imageId, setImageId] = useState(null);
-    const router = useRouter(); 
+    const [imageId, setImageId] = useState(image_id || null);
     const placeholderImage = "/avatar.png";
+    const [selectedDate, setSelectedDate] = useState(
+      birthDate ? new Date(birthDate) : new Date()
+    );
 
     async function handleSubmit(event) {
       event.preventDefault();
@@ -20,21 +20,13 @@ export default function KidForm({ isEditMode, name, birthDate }) {
       birthDate: kidData.birthDate,
       imageId: imageId || placeholderImage,
     };
-    const response = await fetch("/api/kids", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newKid),
-    });
-
-    if (response.ok) {
-      router.push("/");
-    }
+ 
+onSubmit(newKid);
+  
     }
     return (
-        <StyledForm onSubmit={handleSubmit}>
-         <StyledHeading>{isEditMode ? "Infos bearbeiten" : "Infos zu deinem Kind"} </StyledHeading>
+        <StyledForm onSubmit={handleSubmit} data-testid="kid-form">
+         <StyledHeading>{isEditMode ? "Kindinfos bearbeiten" : "Infos deines Kindes"} </StyledHeading>
         <StyledLabel htmlFor="name">Name</StyledLabel>
           <StyledInput 
           type="text" 
@@ -53,21 +45,24 @@ export default function KidForm({ isEditMode, name, birthDate }) {
             type="date"
             id="birthDate"
             name="birthDate"
-            onChange={(date) => setStartDate(date)}
-            selected={startDate}
+            onChange={(date) => setSelectedDate(date)}
+            selected={selectedDate}
             required
             maxDate={today}
             defaultValue={birthDate}
             dateFormat="yyyy/MM/dd"
+            showYearDropdown
           />
-          <StyledCldUploadButton  
+         
+           <StyledCldUploadButton 
           uploadPreset="t4c2yyvk"
           onUpload={({ info }) => setImageId(info.public_id)}
           ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
           <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
           <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
           </svg> Profilbild hinzufügen</StyledCldUploadButton> 
-        <StyledImage
+          <StyledLabel htmlFor="imageId"></StyledLabel>
+          <StyledImage 
           src={imageId ? `https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${imageId}.png` : placeholderImage}
           alt={imageId ? "Bildvorschau" : "Platzhalterbild"}
           width="250"

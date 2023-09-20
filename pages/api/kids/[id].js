@@ -14,13 +14,14 @@ export default async function handler(request, response) {
 
     response.status(200).json(kid);
   }
-  if (request.method === "PATCH") {
-    await Kid.findByIdAndUpdate(id, request.body);
+  if (request.method === "PUT") {
+    const kidData = request.body;
+    await Kid.findByIdAndUpdate(id, kidData);
     response.status(200).json({ message: "Update is successful!" });
-
+  }
   if (request.method === "DELETE") {
       await Kid.findByIdAndDelete(id);
   
       response.status(200).json({ message: "Kid successfully deleted!" });
   }
-}}
+}

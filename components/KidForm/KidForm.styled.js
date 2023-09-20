@@ -13,7 +13,6 @@ export const StyledForm = styled.form`
   max-width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 10rem;
   margin-top: 10rem;
 `;
 export const StyledHeading = styled.h3`

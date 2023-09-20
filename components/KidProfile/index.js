@@ -1,7 +1,8 @@
-import { StyledKidCard, StyledEventList, StyledName, StyledBirthDate, StyledImage } from "./KidProfile.styled";
+import { StyledKidCard, StyledEventList, StyledName, StyledBirthDate, StyledImage, StyledKidDetails } from "./KidProfile.styled";
 import { formatDate } from "../../resources/dateUtils";
 import EventForm from "../EventForm";
-import Event from "../Event";
+import Event from "../EditEvent";
+import EditKid from "../EditKid";
 
 export default function KidProfile({
   kidData, 
@@ -11,7 +12,10 @@ export default function KidProfile({
 
   return (
       <StyledKidCard>
-         {kidData.imageId && (
+         <EditKid key={kidData._id} 
+          kidData={kidData} 
+          mutate={mutate}/>  
+          {kidData.imageId && (
          <StyledImage 
          src={kidData.imageId === "/avatar.png" ? "/avatar.png" : `https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${kidData.imageId}.png`}
          alt={kidData.name}
@@ -19,8 +23,11 @@ export default function KidProfile({
          height="250"
           />
          )}
-        <StyledName>{kidData.name}</StyledName>
-        <StyledBirthDate>🎂 {formatDate(kidData.birthDate)}</StyledBirthDate>  
+         <StyledKidDetails>
+          <StyledName>{kidData.name}</StyledName>
+        <StyledBirthDate>🎂 {formatDate(kidData.birthDate)}</StyledBirthDate> 
+        
+        </StyledKidDetails>
       <StyledEventList>
         {kidData?.events?.map((event) => (
           <Event
