@@ -25,7 +25,7 @@ onSubmit(newKid);
   
     }
     return (
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledForm onSubmit={handleSubmit} data-testid="kid-form">
          <StyledHeading>{isEditMode ? "Kindinfos bearbeiten" : "Infos deines Kindes"} </StyledHeading>
         <StyledLabel htmlFor="name">Name</StyledLabel>
           <StyledInput 
