@@ -12,7 +12,10 @@ export default function KidProfile({
 
   return (
       <StyledKidCard>
-         {kidData.imageId && (
+         <EditKid key={kidData._id} 
+          kidData={kidData} 
+          mutate={mutate}/>  
+          {kidData.imageId && (
          <StyledImage 
          src={kidData.imageId === "/avatar.png" ? "/avatar.png" : `https://res.cloudinary.com/dyb6xyd09/image/upload/v1690882027/${kidData.imageId}.png`}
          alt={kidData.name}
@@ -23,9 +26,7 @@ export default function KidProfile({
          <StyledKidDetails>
           <StyledName>{kidData.name}</StyledName>
         <StyledBirthDate>🎂 {formatDate(kidData.birthDate)}</StyledBirthDate> 
-        <EditKid key={kidData._id} 
-          kidData={kidData} 
-          mutate={mutate}/>  
+        
         </StyledKidDetails>
       <StyledEventList>
         {kidData?.events?.map((event) => (

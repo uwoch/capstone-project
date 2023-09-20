@@ -1,6 +1,6 @@
 import { useState } from "react";
 import KidForm from "../KidForm";
-import { StyledSection, StyledEditButton, StyledDeleteButton, StyledCancelButton } from "./EditKid.styled";
+import { StyledSection, StyledEditButton, StyledDeleteButton, StyledCancelButton, StyledContainer } from "./EditKid.styled";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
@@ -52,7 +52,8 @@ export default function EditKid() {
   
     return (
       <StyledSection>
-        <div><StyledEditButton
+        <StyledContainer>
+        <StyledEditButton
             type="button"
             onClick={() => {
               setIsEditMode(!isEditMode);
@@ -61,7 +62,7 @@ export default function EditKid() {
           <StyledDeleteButton type="button" onClick={() => handleDeleteKid()} disabled={isEditMode}>
           <span role="img" aria-label="A cross indicating deletion">❌</span>
           </StyledDeleteButton>
-          </div>
+          </StyledContainer>
         {isEditMode && (
             <KidForm
               onSubmit={handleEditKid}

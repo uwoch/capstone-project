@@ -6,7 +6,7 @@ export const StyledKidCard = styled.article`
   padding: 1.2rem;
   text-align: center;
   overflow-wrap: break-word;
-  margin-top: 10rem;
+  margin-top: 20rem;
   margin-bottom: 4rem;
 `;
 
@@ -53,4 +53,7 @@ export const StyledImage = styled(Image)`
 
 `;
 export const StyledKidDetails = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
