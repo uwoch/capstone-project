@@ -5,6 +5,8 @@ import {
   StyledBirthDate,
   StyledImage,
   StyledKidDetails,
+  StyledHeading,
+  StyledArticle,
 } from "./KidProfile.styled";
 import { formatDate } from "../../resources/dateUtils";
 import EventForm from "../EventForm";
@@ -13,6 +15,7 @@ import EditKid from "../EditKid";
 
 export default function KidProfile({ kidData, onSubmit, mutate }) {
   return (
+    <StyledArticle>
     <StyledKidCard>
       <EditKid key={kidData._id} kidData={kidData} mutate={mutate} />
       {kidData.imageId && (
@@ -32,6 +35,9 @@ export default function KidProfile({ kidData, onSubmit, mutate }) {
         <StyledBirthDate>🎂 {formatDate(kidData.birthDate)}</StyledBirthDate>
       </StyledKidDetails>
       <StyledEventList>
+      {kidData?.events?.length > 0 && (
+            <StyledHeading>Deine Meilensteine:</StyledHeading>
+          )}
         {kidData?.events?.map((event) => (
           <Event
             key={event._id}
@@ -40,8 +46,8 @@ export default function KidProfile({ kidData, onSubmit, mutate }) {
             event={event}
           />
         ))}
-      </StyledEventList>
+      </StyledEventList></StyledKidCard>
       <EventForm onSubmit={onSubmit} />
-    </StyledKidCard>
+    </StyledArticle>
   );
 }

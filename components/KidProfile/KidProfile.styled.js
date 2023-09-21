@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-export const StyledKidCard = styled.article`
+export const StyledArticle = styled.article`
   align-items: center;
   padding: 1.2rem;
   text-align: center;
@@ -56,4 +56,13 @@ export const StyledKidDetails = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const StyledHeading = styled.h3`
+`;
+export const StyledKidCard = styled.section`
+box-shadow: 0px 1px 5px -2px #7f8487;
+  border-radius: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 3rem;
 `;
