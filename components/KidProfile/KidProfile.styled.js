@@ -6,7 +6,7 @@ export const StyledKidCard = styled.article`
   padding: 1.2rem;
   text-align: center;
   overflow-wrap: break-word;
-  margin-top: 20rem;
+  margin-top: 8rem;
   margin-bottom: 4rem;
 `;
 

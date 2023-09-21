@@ -65,6 +65,7 @@ export default function EditKid() {
           </StyledContainer>
         {isEditMode && (
             <KidForm
+              $active={isEditMode}
               onSubmit={handleEditKid}
               name={kidData.name}
               birthDate={kidData.birthDate}

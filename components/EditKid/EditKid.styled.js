@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledSection = styled.section`
   padding: 0.5rem;
-  margin-top: -12rem;
 `;
 
 export const StyledEditButton = styled.button`

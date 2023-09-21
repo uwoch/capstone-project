@@ -2,7 +2,7 @@ import { StyledForm, StyledLabel, StyledInput, StyledSaveButton, StyledHeading, 
 import { StyledDatePicker } from "../DatePicker/DatePicker.styled";
 import { useState } from "react";
 
-export default function KidForm({ isEditMode, name, birthDate, image_id, onSubmit }) {
+export default function KidForm({ isEditMode, name, birthDate, image_id, onSubmit, $active }) {
     const today = new Date();
     const [imageId, setImageId] = useState(image_id || null);
     const placeholderImage = "/avatar.png";
@@ -25,7 +25,7 @@ onSubmit(newKid);
   
     }
     return (
-        <StyledForm onSubmit={handleSubmit} data-testid="kid-form">
+        <StyledForm onSubmit={handleSubmit} data-testid="kid-form" $active={$active}>
          <StyledHeading>{isEditMode ? "Kindinfos bearbeiten" : "Infos deines Kindes"} </StyledHeading>
         <StyledLabel htmlFor="name">Name</StyledLabel>
           <StyledInput 
