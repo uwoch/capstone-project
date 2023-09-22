@@ -89,3 +89,6 @@ export const AnimationContainer = styled.article`
   height: auto;
 `;
 
+export const StyledGreeting = styled.h3`
+text-align: center;
+`;

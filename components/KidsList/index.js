@@ -11,6 +11,7 @@ import {
   StyledSubHead,
   StyledAddChildLink,
   StyledContainer,
+  StyledGreeting,
 } from "./KidsList.styled";
 import Lottie from "lottie-react";
 import melon from "../../public/melon.json";
@@ -24,6 +25,9 @@ export default function KidsList() {
   if (!data || data.length === 0) {
     return (
       <StyledContainer>
+         <StyledGreeting>
+          Willkommen bei Kids Log!
+        </StyledGreeting>
         <AnimationContainer>
           <Lottie animationData={melon} loop={true} />
         </AnimationContainer>
