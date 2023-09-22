@@ -9,5 +9,9 @@ The Kids-Log app makes it easy to record all of your children's milestones. Whet
 - Next.js
 - Cloudinary
 - Styled Components
+- MongoDB Atlas
+- Mongoose
+- React Testing Library
+- Jest
 - Git
 - npm
