@@ -5,7 +5,7 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledEditButton = styled.button`
-  background-color: #ffffff;
+  background-color: transparent;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -13,7 +13,7 @@ export const StyledEditButton = styled.button`
 `;
 
 export const StyledDeleteButton = styled.button`
-  background-color: #ffffff;
+  background-color: transparent;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -22,6 +22,7 @@ export const StyledDeleteButton = styled.button`
 export const StyledCancelButton = styled.button`
   background-color: #ffe0e0;
   border: none;
+  font-size: 1rem;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   margin: 1rem 0.5rem 1rem 0.5rem;

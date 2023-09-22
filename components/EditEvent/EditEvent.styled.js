@@ -16,7 +16,7 @@ export const StyledParagraph = styled.p`
 `;
 
 export const StyledEditButton = styled.button`
-  background-color: #ffffff;
+  background-color: transparent;
   border: none;
   border-radius: 0.5rem;
   padding-right: 0.5rem;
@@ -25,7 +25,7 @@ export const StyledEditButton = styled.button`
 `;
 
 export const StyledDeleteButton = styled.button`
-  background-color: #ffffff;
+  background-color: transparent;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -34,8 +34,8 @@ export const StyledDeleteButton = styled.button`
 
 export const StyledCancelButton = styled.button`
   background-color: #ffe0e0;
-  font-size: 1rem;
   border: none;
+  font-size: 1rem;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   margin: 2rem 0.5rem 0.5rem 0.5rem;
