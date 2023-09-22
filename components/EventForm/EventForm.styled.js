@@ -9,8 +9,6 @@ export const StyledForm = styled.form`
   box-shadow: 0px 1px 5px -2px #7f8487;
   border-radius: 0.5rem;
   max-width: 100%;
-${'' /*   margin-left: 5%;
-  margin-right: 5%; */}
 `;
 export const StyledHeading = styled.h3`
   text-align: center;
