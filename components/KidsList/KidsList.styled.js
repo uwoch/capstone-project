@@ -21,7 +21,7 @@ export const StyledListItem = styled.li`
 `;
 
 export const StyledImage = styled(Image)`
-    width: 60%;
+    width: 80%;
     height: auto;
     border-radius: 0.5rem;
     margin-bottom: -0.8rem;
@@ -32,7 +32,7 @@ export const StyledImage = styled(Image)`
     }
 
     @media (min-width: 1200px){
-        width: 40%;
+        width: 60%;
         height: auto;
     }
 `;

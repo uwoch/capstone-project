@@ -5,8 +5,8 @@ import { useRouter } from "next/router";
 export default function KidDetails() {
   const router = useRouter();
   const { id } = router.query;
-  const { data: kidData, isLoading, mutate} = useSWR(`/api/kids/${id}`);
- 
+  const { data: kidData, isLoading, mutate } = useSWR(`/api/kids/${id}`);
+
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -25,24 +25,23 @@ export default function KidDetails() {
       const eventData = await responseEvent.json();
 
       if (kidData) {
-      const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          events: [...kidData?.events, eventData.data._id],
-        }),
-      });
+        const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            events: [...kidData?.events, eventData.data._id],
+          }),
+        });
 
-      if (responseKid.ok) {
-        mutate();
-        
+        if (responseKid.ok) {
+          mutate();
+        }
       }
+      event.target.reset();
     }
-    event.target.reset();
   }
-}
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -52,9 +51,6 @@ export default function KidDetails() {
   }
 
   return (
-    <KidProfile
-      onSubmit={handleSubmit}
-      kidData={kidData}
-      mutate={mutate} />
+    <KidProfile onSubmit={handleSubmit} kidData={kidData} mutate={mutate} />
   );
 }

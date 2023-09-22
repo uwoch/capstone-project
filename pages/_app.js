@@ -14,9 +14,9 @@ export default function App({ Component, pageProps }) {
         <title>Kids Log - Capstone Project</title>
       </Head>
       <SWRConfig value={{ fetcher }}>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
       </SWRConfig>
     </>
   );

@@ -13,7 +13,7 @@ export const StyledForm = styled.form`
   max-width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 10rem;
+  margin-top: ${(props) => (props.$active ? "0rem" : "10rem")};
 `;
 export const StyledHeading = styled.h3`
   text-align: center;
@@ -34,7 +34,7 @@ export const StyledSaveButton = styled.button`
   font-size: 1rem;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem ;
+  padding: 0.5rem 1rem;
   margin: 0.5rem 0.5rem 1rem 0.5rem;
   cursor: pointer;
 `;
@@ -49,26 +49,26 @@ export const StyledCldUploadButton = styled(CldUploadButton)`
   color: #ffffff;
 `;
 export const StyledImage = styled(Image)`
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  width: 40%;
+  height: auto;
+
+  @media (min-width: 600px) {
     width: 40%;
     height: auto;
+  }
 
-    @media (min-width: 600px){
-        width: 40%;
-        height: auto;
-    }
+  @media (min-width: 900px) {
+    width: 40%;
+    height: auto;
+  }
 
-    @media (min-width: 900px){
-        width: 40%;
-        height: auto;
-    }
-
-    @media (min-width: 1200px){
-        width: 40%;
-        height: auto;
-    }
-    @media (min-width: 1536px){
-        width: 20%;
-        height: auto;
-    }
+  @media (min-width: 1200px) {
+    width: 40%;
+    height: auto;
+  }
+  @media (min-width: 1536px) {
+    width: 20%;
+    height: auto;
+  }
 `;

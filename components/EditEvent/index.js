@@ -1,10 +1,15 @@
 import { useState } from "react";
 import EventForm from "../EventForm";
-import { StyledListItem, StyledParagraph, StyledEditButton, StyledDeleteButton, StyledCancelButton } from "./EditEvent.styled";
+import {
+  StyledListItem,
+  StyledParagraph,
+  StyledEditButton,
+  StyledDeleteButton,
+  StyledCancelButton,
+} from "./EditEvent.styled";
 import { formatDate } from "../../resources/dateUtils";
 
 export default function EditEvent({ event, kidData, mutate }) {
-
   const [isEditMode, setIsEditMode] = useState(false);
 
   async function handleEditEvent(e) {
@@ -29,29 +34,33 @@ export default function EditEvent({ event, kidData, mutate }) {
       `Möchtest du das Ereignis wirklich löschen?`
     );
     if (shouldDelete) {
-    const responseEvent = await fetch(`/api/events/${event?._id}`, {
-      method: "DELETE"});
-    
-    if (responseEvent.ok) {
-      const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          events: kidData?.events.filter((oneEvent) => {
-            return oneEvent._id == event._id ? false : true;
-          }),
-        }),
+      const responseEvent = await fetch(`/api/events/${event?._id}`, {
+        method: "DELETE",
       });
-      if (responseKid.ok) {
-        mutate();
+
+      if (responseEvent.ok) {
+        const responseKid = await fetch(`/api/kids/${kidData?._id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            events: kidData?.events.filter((oneEvent) => {
+              return oneEvent._id == event._id ? false : true;
+            }),
+          }),
+        });
+        if (responseKid.ok) {
+          mutate();
+        }
       }
     }
-  }}
+  }
   return (
     <StyledListItem>
-      <StyledParagraph><strong>{event.title}:</strong> {formatDate(event.date)}</StyledParagraph>
+      <StyledParagraph>
+        <strong>{event.title}:</strong> {formatDate(event.date)}
+      </StyledParagraph>
       <div>
         {isEditMode && (
           <EventForm
@@ -67,12 +76,15 @@ export default function EditEvent({ event, kidData, mutate }) {
           type="button"
           onClick={() => {
             setIsEditMode(!isEditMode);
-          }}>
+          }}
+        >
           ✏️
-          </StyledEditButton>
+        </StyledEditButton>
       ) : null}
       {!isEditMode ? (
-        <StyledDeleteButton type="button" onClick={() => handleDeleteEvent(event)}
+        <StyledDeleteButton
+          type="button"
+          onClick={() => handleDeleteEvent(event)}
         >
           ❌
         </StyledDeleteButton>
@@ -81,8 +93,9 @@ export default function EditEvent({ event, kidData, mutate }) {
           type="button"
           onClick={() => {
             setIsEditMode(!isEditMode);
-          }}>
-        Abbrechen
+          }}
+        >
+          Abbrechen
         </StyledCancelButton>
       )}
     </StyledListItem>

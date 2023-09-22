@@ -1,6 +1,12 @@
 import { useState } from "react";
 import KidForm from "../KidForm";
-import { StyledSection, StyledEditButton, StyledDeleteButton, StyledCancelButton, StyledContainer } from "./EditKid.styled";
+import {
+  StyledSection,
+  StyledEditButton,
+  StyledDeleteButton,
+  StyledCancelButton,
+  StyledContainer,
+} from "./EditKid.styled";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
@@ -10,7 +16,7 @@ export default function EditKid() {
   const { data: kidData, isLoading, mutate } = useSWR(`/api/kids/${id}`);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   async function handleEditKid(editedKid) {
     const response = await fetch(`/api/kids/${kidData?._id}`, {
       method: "PUT",
@@ -31,17 +37,19 @@ export default function EditKid() {
     if (shouldDelete) {
       setIsDeleting(true);
 
-    const response = await fetch(`/api/kids/${kidData?._id}`, {
-      method: "DELETE"});
-    
+      const response = await fetch(`/api/kids/${kidData?._id}`, {
+        method: "DELETE",
+      });
+
       if (response.ok) {
         router.push("/");
-       } else {
+      } else {
         console.error("Error deleting kid");
-    } 
-    setIsDeleting(false);
-    }}
-   
+      }
+      setIsDeleting(false);
+    }
+  }
+
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
@@ -49,37 +57,51 @@ export default function EditKid() {
   if (!kidData) {
     return <h1>No data!</h1>;
   }
-  
-    return (
-      <StyledSection>
-        <StyledContainer>
+
+  return (
+    <StyledSection>
+      <StyledContainer>
         <StyledEditButton
-            type="button"
-            onClick={() => {
-              setIsEditMode(!isEditMode);
-            }}>   <span role="img" aria-label="A pencil">✏️</span>
-            </StyledEditButton>
-          <StyledDeleteButton type="button" onClick={() => handleDeleteKid()} disabled={isEditMode}>
-          <span role="img" aria-label="A cross indicating deletion">❌</span>
-          </StyledDeleteButton>
-          </StyledContainer>
-        {isEditMode && (
-            <KidForm
-              onSubmit={handleEditKid}
-              name={kidData.name}
-              birthDate={kidData.birthDate}
-              image_id={kidData.imageId}
-              isEditMode={true}
-            />)}
-           {isEditMode && (
-            <StyledCancelButton
-            type="button"
-            onClick={() => {
-              setIsEditMode(!isEditMode);
-            }}>
+          type="button"
+          onClick={() => {
+            setIsEditMode(!isEditMode);
+          }}
+        >
+          {" "}
+          <span role="img" aria-label="A pencil">
+            ✏️
+          </span>
+        </StyledEditButton>
+        <StyledDeleteButton
+          type="button"
+          onClick={() => handleDeleteKid()}
+          disabled={isEditMode}
+        >
+          <span role="img" aria-label="A cross indicating deletion">
+            ❌
+          </span>
+        </StyledDeleteButton>
+      </StyledContainer>
+      {isEditMode && (
+        <KidForm
+          $active={isEditMode}
+          onSubmit={handleEditKid}
+          name={kidData.name}
+          birthDate={kidData.birthDate}
+          image_id={kidData.imageId}
+          isEditMode={true}
+        />
+      )}
+      {isEditMode && (
+        <StyledCancelButton
+          type="button"
+          onClick={() => {
+            setIsEditMode(!isEditMode);
+          }}
+        >
           Abbrechen
-          </StyledCancelButton>
-           )}
-      </StyledSection>
-    );
-  }
+        </StyledCancelButton>
+      )}
+    </StyledSection>
+  );
+}

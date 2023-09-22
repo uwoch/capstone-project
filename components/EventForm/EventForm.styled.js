@@ -8,9 +8,7 @@ export const StyledForm = styled.form`
   padding: 0.5rem;
   box-shadow: 0px 1px 5px -2px #7f8487;
   border-radius: 0.5rem;
-  max-width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
+  max-width: 100%;
 `;
 export const StyledHeading = styled.h3`
   text-align: center;

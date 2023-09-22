@@ -17,7 +17,5 @@ export default function AddChildPage() {
       router.push("/");
     }
   }
-  return (
-    <KidForm onSubmit={handleAddChild} />
-  );
-} 
+  return <KidForm onSubmit={handleAddChild} />;
+}
